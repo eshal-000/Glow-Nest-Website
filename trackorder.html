@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trackorder.css">
+</head>
+<body>
+     <nav>
+ <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+   <div class="dropdown">
+  <a href="#">Products ▾</a>
+  <div class="dropdown-content">
+    <a href="toner.html">Toner</a>
+    <a href="serum.html">Serum</a>
+    <a href="cleanser.html">Cleanser</a>
+   <a href="face wash.html">Face Wash</a>
+   <a href="sunblock.html">sunblock</a>
+    <a href="deal.html">50% of deals</a>
+  </div>
+    <a href="bundles.html">Bundles</a>
+</div>
+       <a href="glowy.html">Services</a>
+
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+
+    <div class="logo">GlowNest</div>
+
+   <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+    <section class="track-order-section">
+  <h2>Track Your Order</h2>
+  <p>Enter your order number or email address below to check your order status.</p>
+  
+  <form class="track-order-form" action="track-result.html" method="GET">
+    <input type="text" name="track" placeholder="Order Number or Email" required>
+    <button type="submit">Track</button>
+  </form>
+</section>
+<section class="faq-section">
+  <h2>Frequently <span> Questions</span></h2>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq1">
+    <label for="faq1" class="faq-question">
+      <span>How long does delivery take?</span>
+      <span class="arrow">&#9662;</span>
+    </label>
+    <div class="faq-answer">Delivery usually takes 2–4 working days depending on your location.</div>
+  </div>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq2">
+    <label for="faq2" class="faq-question">
+      <span>Are your products suitable for all skin types?</span>
+      <span class="arrow">&#9662;</span>
+    </label>
+    <div class="faq-answer">Yes! Our formulas are gentle and effective for all skin types — especially sensitive skin.</div>
+  </div>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq3">
+    <label for="faq3" class="faq-question">
+      <span>Can I return a product?</span>
+      <span class="arrow">&#9662;</span>
+    </label>
+    <div class="faq-answer">We offer a 7-day easy return policy. Contact support for help.</div>
+  </div>
+
+  <div class="faq-item">
+    <input type="checkbox" id="faq4">
+    <label for="faq4" class="faq-question">
+      <span>Are your products cruelty-free?</span>
+      <span class="arrow">&#9662;</span>
+    </label>
+    <div class="faq-answer">Yes, we never test on animals. All products are cruelty-free.</div>
+  </div>
+</section>
+
+
+<section class="delivery-promise">
+  <p>🚚 Free Shipping over Rs. 2,000 | ⏱ 2-4 Day Delivery | 🔄 Easy Returns</p>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section about">
+      <h3>Glow Nest</h3>
+      <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+    </div>
+
+  
+    <div class="footer-section links">
+      <h4>GlowNest</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-section newsletter">
+      <h4>Join Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+      <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 GlowNest. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      let query = searchInput.value.toLowerCase().trim();
+
+      
+      if (query.includes("sunblock")) {
+        window.location.href = "sunblock.html";
+      } else if (query.includes("serum")) {
+        window.location.href = "serum.html";
+      } else if (query.includes("toner")) {
+        window.location.href = "toner.html";
+      } else if (query.includes("facewash")) {
+        window.location.href = "facewash.html";
+      }
+      else if (query.includes("deal")) {
+        window.location.href = "deal.html";
+      }
+      else if (query.includes("bundles")) {
+        window.location.href = "bundles.html";
+      }
+      else if (query.includes("home")) {
+        window.location.href = "home.html";
+      }
+      else if (query.includes("about")) {
+        window.location.href = "about.html";
+      }
+      else {
+        alert("Product not found! 🙁");
+      }
+    }
+  });
+</script>
+</body>
+</html>

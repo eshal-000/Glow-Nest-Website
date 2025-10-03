@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="about.css">
+
+
+</head>
+<body>
+ <nav>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+   <div class="dropdown">
+  <a href="#">Products ▾</a>
+  <div class="dropdown-content">
+    <a href="toner.html">Toner</a>
+    <a href="serum.html">Serum</a>
+    <a href="cleanser.html">Cleanser</a>
+   <a href="face wash.html">Face Wash</a>
+   <a href="sunblock.html">sunblock</a>
+    <a href="deal.html">50% of deals</a>
+  </div>
+    <a href="bundles.html">Bundles</a>
+</div>
+       <a href="glowy.html">Services</a>
+
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+
+    <div class="logo">GlowNest</div>
+
+  <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+  <div class="first-section">
+<div class="main">
+    <h1>Welcome to EstiGlow <br>where skincare meets self-care.</h1>
+    
+<p>Whether you’re battling dryness, dullness, acne, or just looking<br> to refresh your routine — we’ve got your glow.</p>
+<img src="skin imgs/care.png" alt="">
+</div>
+  </div>
+<div class="product-section">
+  <h2>Our Products</h2>
+  <p class="products-intro">
+    At EstiGlow, we blend nature with science to craft skincare that truly cares. <br>
+    From deep-cleansing to deep-nourishing, each product has a purpose. <br>
+    Thoughtfully made for all skin types, tones, and textures. <br>
+    Start your glow journey today — because your skin deserves the best.
+  </p>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="skin imgs/product1.jpeg" alt="Product 1">
+      <h3>Choco Body Waxing kit</h3>
+      <p>PKR 1,200</p>
+      <button onclick="cart()">ADD CART</button>
+    </div> 
+     <div id="popup-card"></div>
+
+    <div class="product-card">
+      <img src="skin imgs/product2.webp" alt="Product 2">
+      <h3> Charcol POwder</h3>
+      <p>PKR 1,800</p>
+      <button onclick="on()">Add to Cart</button>
+    </div>
+<div id="card-on"></div>
+    <div class="product-card">
+      <img src="skin imgs/product3.jpg" alt="Product 3">
+      <h3>SLik Hair Oil 150ml</h3>
+      <p>PKR 950</p>
+      <button onclick="mycard()">Add to Cart</button>
+    </div>
+<div id="third-card"></div>
+    <div class="product-card">
+      <img src="skin imgs/product4.webp" alt="Product 4">
+      <h3>Glay Mask</h3>
+      <p>PKR 1,100</p>
+      <button onclick="forth()">Add to Cart</button>
+    </div>
+    <div id="forth-card"></div>
+  </div>
+</div>
+ <section class="full-video-section">
+    <video autoplay muted loop playsinline>
+      <source src="skin imgs/Product Video Broll Shoot.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay">
+      <h2>Discover the Glow Within</h2>
+      <p>Experience pure, clean skincare with GlowNest</p>
+    </div>
+  </section>
+  <section class="core-values">
+  <h2>Our Core Values</h2>
+  <div class="values-grid">
+    <div class="value-box">
+      <h3>Purity</h3>
+      <p>We believe in clean, chemical-free skincare that respects your skin and the environment.</p>
+    </div>
+    <div class="value-box">
+      <h3>Transparency</h3>
+      <p>We share every ingredient we use, so you always know what's going on your skin.</p>
+    </div>
+    <div class="value-box">
+      <h3>Empowerment</h3>
+      <p>Our mission is to make every person feel confident and beautiful in their skin.</p>
+    </div>
+  </div>
+</section>
+<section class="testimonials-section">
+  <h2>What Our Customers Say</h2>
+
+  <div class="testimonials-container">
+    <div class="testimonial-card">
+      <img src="skin imgs/cutomer.jpg" alt="Ayesha" class="user-img">
+      <p>"GlowNest products are gentle and effective. My skin has never felt this soft!"</p>
+      <h4>— Ayesha K.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="skin imgs/customer1.jpg" alt="Fatima" class="user-img">
+      <p>"The hydra serum is a game-changer. I saw a visible glow in just a week!"</p>
+      <h4>— Fatima R.</h4>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="skin imgs/customer3.jpg" alt="Sana" class="user-img">
+      <p>"I love that GlowNest uses clean ingredients. Safe for my sensitive skin!"</p>
+      <h4>— Sana M.</h4>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section about">
+      <h3>Glow Nest</h3>
+      <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+    </div>
+
+  
+    <div class="footer-section links">
+      <h4>GlowNest</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-section newsletter">
+      <h4>Join Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+      <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 GlowNest. All rights reserved.</p>
+  </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="about.js"></script>
+</body>
+</html>

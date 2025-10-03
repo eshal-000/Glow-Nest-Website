@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cleanser Section</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+     
+    }
+
+    h2 {
+      text-align: center;
+       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 40px;
+      color: #d81b60;
+      margin-top: 30px;
+    }
+h2 span{
+  color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 40px;
+}
+    .cleanser-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cleanser-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s ease;
+      text-align: center;
+    }
+
+    .cleanser-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .cleanser-card h3 {
+      margin: 15px 0 5px;
+      color: #444;
+    }
+
+    .cleanser-card p {
+      font-size: 14px;
+      color: #666;
+      padding: 0 10px;
+    }
+
+    .cart-btn {
+      margin: 15px 0 20px;
+      padding: 8px 20px;
+      background: #ff7aa5;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .cart-btn:hover {
+      background: #e05d8d;
+    }
+
+    .cleanser-review {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      background: #fff8fb;
+    }
+
+    .review-img img {
+      width: 280px;
+      max-width: 100%;
+      border-radius: 12px;
+    }
+
+    .review-text {
+      max-width: 500px;
+      margin-left: 40px;
+    }
+
+    .review-text h2 {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .review-text p {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    .review-text h4 {
+      margin-top: 10px;
+      font-weight: normal;
+      color: #888;
+    }
+
+    @media(max-width: 768px) {
+      .cleanser-review {
+        flex-direction: column;
+        text-align: center;
+      }
+      .review-text {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+    }
+    .footer {
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #d81b60;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section a:hover {
+  color: #6a994e;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section input[type="email"] {
+  padding: 8px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-section button {
+  padding: 8px 12px;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.footer-section button:hover {
+  background-color:#d81b60;
+}
+
+.footer-section.social a img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body{
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  ;
+  color: #e91e63;
+  letter-spacing: 1px;
+  order: 1; 
+}
+
+.nav-left {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+  order: 2;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover {
+  color: #e91e63;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 150px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #ffedf5;
+  color: #e91e63;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.search {
+  order: 3;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 5px rgba(255, 77, 166, 0.5);
+}
+
+.first-section{
+    background-color: #ff87afa7;
+    width: 1220px;
+    height: 500px;
+    margin-left: 2cm;
+    margin-top: 1cm;
+    border-radius: 18px;
+}
+.main{
+    color: white;
+  padding: 40px 60px;
+
+}
+.main h1{
+    font-size: 40px;
+    margin-top: 70px;
+    color: #e91e63;
+
+}
+.main p{
+    margin-top: 40px;
+    font-size: 20px;
+    color: black;
+}
+.main img{
+    margin-top: -5.80cm;
+    margin-left: 18cm;
+    width: 530px;
+    height: 380px;
+}
+#one-card  {
+  position: fixed;
+  top: 50%;
+  left: 4.3cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#one-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#one-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#one-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#one-card .btn:hover {
+  background-color: #e05590;
+}
+#four-card  {
+  position: fixed;
+  top: 50%;
+  left: 27.7cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#four-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#four-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#four-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#four-card .btn:hover {
+  background-color: #e05590;
+}
+
+#three-card  {
+  position: fixed;
+  top: 50%;
+  left: 20cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#three-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#three-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#three-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#three-card .btn:hover {
+  background-color: #e05590;
+}
+
+#two-card  {
+  position: fixed;
+  top: 50%;
+  left: 12cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#two-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#two-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#two-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#two-card .btn:hover {
+  background-color: #e05590;
+}
+
+.concerns-sec {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  margin-top: 1cm;
+  text-align: center;
+
+}
+
+.concerns-sec h2 {
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  color:#d81b60;
+}
+.concerns-sec h2 span{
+  font-size: 40px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: #000000;
+}
+.concerns-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 1cm;
+  gap: 20px;
+}
+
+.concern-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px 10px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.concern-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.concern-item .icon {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.concern-item p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .concerns-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .concerns-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.why-choose-sec {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.why-choose-sec h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #d81b60;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.why-choose-sec .subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 35px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.why-item {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  padding: 25px 15px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.why-item .icon {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.why-item h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.why-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.before-after-sec {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+  text-align: center;
+}
+
+.before-after-sec h2 {
+  font-size: 40px;
+  margin-top: 40px;
+  color: #d81b60;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.before-after-sec .subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.before-after-grid {
+  display: grid;
+  margin-top: 1cm;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.ba-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ba-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.1);
+}
+
+.ba-card img {
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.ba-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.ba-card h3.before {
+  color: #d9534f;
+}
+
+.ba-card h3.after {
+  color: #d81b60;
+}
+
+.ba-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cta-strip {
+  width: 100%;
+  height: 80px;
+  background: #e05d8d;
+  color: #fff;
+  padding: 12px 0;
+  overflow: hidden;
+  position: relative;
+  font-family: system-ui, sans-serif;
+}
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: tickerMove 12s linear infinite;
+}
+
+.ticker p {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0;
+  margin-top: 5px;
+  padding-left: 100%;
+}
+
+@keyframes tickerMove {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+  </style>
+</head>
+<body>
+<nav>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+   <div class="dropdown">
+  <a href="#">Products▾</a>
+  <div class="dropdown-content">
+    <a href="toner.html">Toner</a>
+    <a href="serum.html">Serum</a>
+    <a href="cleanser.html">Cleanser</a>
+  <a href="face wash.html">Face Wash</a>
+  <a href="sunblock.html">SunBlock</a>
+
+    <a href="deal.html">50% of deals</a>
+  </div>
+    <a href="bundles.html">Bundles</a>
+</div>
+       <a href="glowy.html">Services</a>
+
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+
+    <div class="logo">GlowNest</div>
+
+  <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+  <div class="first-section">
+<div class="main">
+    <h1>Discover the Power of Clean Skin <br>with GlowNest  Cleansers</h1>
+    
+<p>Say goodbye to dirt, oil, and impurities — and hello to fresh, radiant skin.<br>
+Whether you're dealing with clogged pores, breakouts, or just need a daily refresh —<br> our cleansers are your first step to glowing confidence.</p>
+<img src="skin imgs/pretty-face-attractive-smiling-girl-white-robe-sitting-hotel-terrace-holding-cup-coffee-tea.png" alt="">
+</div>
+  </div>
+
+  <section class="cleanser-section">
+    <h2>Our Best<span>     Cleansers     </span> </h2>
+    <div class="cleanser-grid">
+
+      <div class="cleanser-card">
+        <img src="skin imgs/foaming cleanser.jpg" alt="Foaming Cleanser">
+        <h3>Foaming Cleanser</h3>
+        <p>Deep cleans without drying your skin.</p>
+        <button class="cart-btn"onclick="one()">Add to Cart</button>
+      </div>
+<div id="one-card"></div>
+      <div class="cleanser-card">
+        <img src="skin imgs/milk cleanser.jpg" alt="Milk Cleanser">
+        <h3>Milk Cleanser</h3>
+        <p>Gently removes makeup and impurities.</p>
+        <button class="cart-btn"onclick="two()">Add to Cart</button>
+      </div>
+<div id="two-card"></div>
+      <div class="cleanser-card">
+        <img src="skin imgs/gel cleanser.png" alt="Gel Cleanser">
+        <h3>Gel Cleanser</h3>
+        <p>Refreshes oily skin with a light touch.</p>
+        <button class="cart-btn"onclick="three()">Add to Cart</button>
+      </div>
+<div id="three-card"></div>
+      <div class="cleanser-card">
+        <img src="skin imgs/expho.jpg" alt="Exfoliating Cleanser">
+        <h3>Exfoliating Cleanser</h3>
+        <p>Removes dead skin for a glowing look.</p>
+        <button class="cart-btn"onclick="four()">Add to Cart</button>
+      </div>
+<div id="four-card"></div>
+    </div>
+  </section>
+
+  <section class="concerns-sec">
+  <h2> Skin Concerns    <span>    Our Cleanser Solves</span> </h2>
+  <div class="concerns-grid">
+    
+    <div class="concern-item">
+      <span class="icon">✨</span>
+      <p>Removes Makeup Residue</p>
+    </div>
+
+    <div class="concern-item">
+      <span class="icon">💧</span>
+      <p>Maintains Hydration</p>
+    </div>
+
+    <div class="concern-item">
+      <span class="icon">🌿</span>
+      <p>Soothes Sensitive Skin</p>
+    </div>
+
+    <div class="concern-item">
+      <span class="icon">⚡</span>
+      <p>Reduces Excess Oil</p>
+    </div>
+
+  </div>
+</section>
+
+  <section class="cleanser-review">
+    <div class="review-img">
+      <img src="skin imgs/girly4.webp" alt="Girl using cleanser">
+    </div>
+    <div class="review-text">
+      <h2>I Can't Go Without It!</h2>
+      <p>"I’ve started using the Foaming Cleanser and it’s become my daily go-to. It leaves my face feeling clean, fresh, and never tight or dry."</p>
+      <h4>- Sana, 25</h4>
+    </div>
+  </section>
+
+<section class="before-after-sec">
+  <h2>Real Transformation</h2>
+  <p class="subtitle">See the visible difference with GlowNest Face Wash.</p>
+
+  <div class="before-after-grid">
+    
+    <div class="ba-card">
+      <img src="skin imgs/before2.jpg" alt="Before using GlowNest">
+      <h3 class="before">Before</h3>
+     <p>Skin looked dull, pores clogged with dirt & excess oil.</p>
+    </div>
+
+    <div class="ba-card">
+      <img src="skin imgs/afterr2.jpg" alt="After using GlowNest">
+      <h3 class="after">After</h3>
+     <p>Fresh, deeply cleansed skin with clear pores & healthy glow.</p>
+    </div>
+
+  </div>
+</section>
+
+  <section class="why-choose-sec">
+  <h2>Why Choose Our Cleanser?</h2>
+  <p class="subtitle">Trusted by thousands for its natural formula and visible results.</p>
+
+  <div class="why-grid">
+    <div class="why-item">
+      <span class="icon">🌿</span>
+      <h3>Natural Ingredients</h3>
+      <p>Made with aloe vera, neem & vitamin E for healthy skin.</p>
+    </div>
+
+    <div class="why-item">
+      <span class="icon">🧴</span>
+      <h3>Gentle Formula</h3>
+      <p>Safe for daily use, suitable for all skin types.</p>
+    </div>
+
+    <div class="why-item">
+      <span class="icon">⚡</span>
+      <h3>Effective Results</h3>
+      <p>Reduces excess oil, clears acne, and restores glow.</p>
+    </div>
+
+    <div class="why-item">
+      <span class="icon">✅</span>
+      <h3>Dermatologist Approved</h3>
+      <p>Clinically tested and proven safe for your skin.</p>
+    </div>
+  </div>
+</section>
+<section class="cta-strip">
+  <div class="ticker">
+    <p>Deep Clean, Gentle Touch – Order GlowNest Cleanser Now at 15% OFF! </p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section about">
+      <h3>Glow Nest</h3>
+      <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+    </div>
+
+    <div class="footer-section links">
+      <h4>GlowNest</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-section newsletter">
+      <h4>Join Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+      <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 GlowNest. All rights reserved.</p>
+  </div>
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script>
+    
+
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".first-section .main", {
+    y: 50,
+    opacity: 0,
+    duration: 1.2,
+    scale:0.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".first-section",
+      start: "top 80%",
+    }
+  });
+
+ 
+
+
+    gsap.from(".review-img", {
+      x: -100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".cleanser-review",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+  
+    gsap.from(".review-text", {
+      x: 100,
+      opacity: 0,
+      duration: 1.2,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".cleanser-review",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+
+    function one() {
+  const onecard = document.getElementById("one-card");
+  onecard.innerHTML = `
+    <h3>Foaming Cleanser</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="oneoff()">Close</button>
+  `;
+  onecard.style.display = "block";
+}
+
+function oneoff() {
+  document.getElementById("one-card").style.display = "none";
+}
+function two() {
+  const twocard = document.getElementById("two-card");
+  twocard.innerHTML = `
+    <h3>MIlk CLeanser</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="twooff()">Close</button>
+  `;
+  twocard.style.display = "block";
+}
+
+function twooff() {
+  document.getElementById("two-card").style.display = "none";
+}
+function three() {
+  const threecard = document.getElementById("three-card");
+  threecard.innerHTML = `
+    <h3>Gel Cleanser</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="threeoff()">Close</button>
+  `;
+  threecard.style.display = "block";
+}
+
+function threeoff() {
+  document.getElementById("three-card").style.display = "none";
+}
+function four() {
+  const fourcard = document.getElementById("four-card");
+  fourcard.innerHTML = `
+    <h3>Exfoliating Cleanser </h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="fouroff()">Close</button>
+  `;
+  fourcard.style.display = "block";
+}
+
+function fouroff() {
+  document.getElementById("four-card").style.display = "none";
+}
+gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".concerns-sec h2 span", {
+    scrollTrigger: {
+      trigger: ".concerns-sec h2",
+      start: "top 90%"
+    },
+    opacity: 0,
+    x: 50,
+    duration: 1,
+    ease: "back.out(1.7)"
+  });
+
+  gsap.from(".concern-item", {
+    scrollTrigger: {
+      trigger: ".concerns-sec",
+      start: "top 80%"
+    },
+    opacity: 0,
+    y: 40,
+    scale: 0.8,
+    duration: 0.8,
+    stagger: 0.3,
+    ease: "power2.out"
+  });
+gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".before-after-sec h2, .before-after-sec .subtitle", {
+    scrollTrigger: {
+      trigger: ".before-after-sec",
+      start: "top 85%"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out"
+  });
+
+  gsap.from(".ba-card:first-child", {
+    scrollTrigger: {
+      trigger: ".before-after-grid",
+      start: "top 80%"
+    },
+    opacity: 0,
+    x: -100,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  // After card (right side)
+  gsap.from(".ba-card:last-child", {
+    scrollTrigger: {
+      trigger: ".before-after-grid",
+      start: "top 80%"
+    },
+    opacity: 0,
+    x: 100,
+    duration: 1,
+    ease: "power3.out"
+  });
+gsap.registerPlugin(ScrollTrigger);
+
+  // Heading + subtitle
+  gsap.from(".why-choose-sec h2, .why-choose-sec .subtitle", {
+    scrollTrigger: {
+      trigger: ".why-choose-sec",
+      start: "top 85%"
+    },
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power2.out"
+  });
+
+  // Why items animation
+  gsap.from(".why-item", {
+    scrollTrigger: {
+      trigger: ".why-grid",
+      start: "top 80%"
+    },
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+    duration: 0.8,
+    stagger: 0.3,
+    ease: "back.out(1.7)"
+  });
+
+  // CTA ticker animation (infinite scroll text)
+  gsap.to(".ticker p", {
+    xPercent: -100,
+    repeat: -1,
+    duration: 10,
+    ease: "linear"
+  });
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      let query = searchInput.value.toLowerCase().trim();
+
+      
+      if (query.includes("sunblock")) {
+        window.location.href = "sunblock.html";
+      } else if (query.includes("serum")) {
+        window.location.href = "serum.html";
+      } else if (query.includes("toner")) {
+        window.location.href = "toner.html";
+      } else if (query.includes("facewash")) {
+        window.location.href = "facewash.html";
+      }
+      else if (query.includes("deal")) {
+        window.location.href = "deal.html";
+      }
+      else if (query.includes("bundles")) {
+        window.location.href = "bundles.html";
+      }
+      else if (query.includes("home")) {
+        window.location.href = "home.html";
+      }
+      else if (query.includes("about")) {
+        window.location.href = "about.html";
+      }
+      else {
+        alert("Product not found! 🙁");
+      }
+    }
+  });
+  </script>
+</body>
+</html>

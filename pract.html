@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search & Filter Reviews</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+      padding: 40px;
+    }
+
+    .filter-section {
+      max-width: 700px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+    
+    }
+
+    .filter-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px 40px 10px 10px;
+      font-size: 16px;
+      border: 2px solid #ff5fa2;
+      border-radius: 6px;
+    }
+
+    .search-bar i {
+      position: absolute;
+      right: 12px;
+      color: #ff5fa2;
+      font-size: 18px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filters button {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #eee;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .filters button.active {
+      background-color: #ff5fa2;
+      color: white;
+    }
+
+    .results {
+      margin-top: 20px;
+    }
+
+    .result-item {
+      background-color: #fff0f5;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="filter-section">
+  <h2>🔍 Search Review Content</h2>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search review content..." oninput="filterResults()">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <div class="filters">
+    <button onclick="setAge('Below 20')" id="age-below-20">Below 20</button>
+    <button onclick="setAge('20–29')" id="age-20-29">20–29</button>
+    <button onclick="setAge('30–39')" id="age-30-39">30–39</button>
+    <button onclick="setAge('40–49')" id="age-40-49">40–49</button>
+    <button onclick="setAge('Above 50')" id="age-above-50">Above 50</button>
+  </div>
+
+  <div class="filters">
+    <button onclick="setGender('Male')" id="gender-male">Male</button>
+    <button onclick="setGender('Female')" id="gender-female">Female</button>
+    <button onclick="setGender('Other')" id="gender-other">Other</button>
+  </div>
+
+  <div class="results" id="results"></div>
+</div>
+
+<script>
+  const reviews = [
+    // Serum
+    { text: "This serum made my skin glow!", age: "Below 20", gender: "Female", name: "Ayesha Khan" },
+    { text: "Hydrating serum for dry skin.", age: "20–29", gender: "Male", name: "Bilal Ahmed" },
+    { text: "Serum reduced my fine lines.", age: "30–39", gender: "Female", name: "Sana Malik" },
+    { text: "Perfect serum for sensitive skin.", age: "40–49", gender: "Other", name: "Ali Raza" },
+    // Toner
+    { text: "Refreshing toner after cleansing.", age: "Below 20", gender: "Male", name: "Hamza Sheikh" },
+    { text: "Toner helped with my acne.", age: "20–29", gender: "Female", name: "Maham Tariq" },
+    { text: "Gentle toner for daily use.", age: "30–39", gender: "Female", name: "Rabia Hussain" },
+    { text: "Toner balances my oily skin.", age: "Above 50", gender: "Female", name: "Noreen Iqbal" },
+    // Deals
+    { text: "Got a great deal on cleanser!", age: "20–29", gender: "Male", name: "Usman Ghani" },
+    { text: "Discounted serum was worth it.", age: "30–39", gender: "Female", name: "Saira Ahmed" },
+    { text: "Amazing toner deal online.", age: "40–49", gender: "Other", name: "Kamran Ali" },
+    { text: "Bundle deal saved me money.", age: "Above 50", gender: "Female", name: "Shazia Khan" },
+    // Cleanser
+    { text: "Cleanser leaves my skin soft.", age: "Below 20", gender: "Female", name: "Maira Qasim" },
+    { text: "Deep cleansing without dryness.", age: "20–29", gender: "Male", name: "Tahir Javed" },
+    { text: "Gentle cleanser for daily use.", age: "30–39", gender: "Female", name: "Hina Shah" },
+    { text: "My go-to cleanser every morning.", age: "40–49", gender: "Other", name: "Zainab Noor" },
+    // Face Wash
+    { text: "Face wash smells amazing!", age: "Below 20", gender: "Male", name: "Omar Farooq" },
+    { text: "Face wash cleared my pores.", age: "20–29", gender: "Female", name: "Amna Khalid" },
+    { text: "Foamy and refreshing face wash.", age: "30–39", gender: "Female", name: "Sadia Mansoor" },
+    { text: "Face wash suits my mature skin.", age: "Above 50", gender: "Female", name: "Nasreen Akhtar" }
+];
+
+
+  let selectedAge = "";
+  let selectedGender = "";
+
+  function setAge(age) {
+    selectedAge = selectedAge === age ? "" : age;
+    document.querySelectorAll('[id^="age-"]').forEach(btn => btn.classList.remove('active'));
+    if (selectedAge === age) {
+        document.getElementById(`age-${age.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`).classList.add('active');
+    }
+    filterResults();
+}
+
+function setGender(gender) {
+    selectedGender = selectedGender === gender ? "" : gender;
+    document.querySelectorAll('[id^="gender-"]').forEach(btn => btn.classList.remove('active'));
+    if (selectedGender === gender) {
+        document.getElementById(`gender-${gender.toLowerCase()}`).classList.add('active');
+    }
+    filterResults();
+}
+
+ function filterResults() {
+    const query = document.getElementById("searchInput").value.toLowerCase();
+    const filtered = reviews.filter(r => r.text.toLowerCase().includes(query) && (selectedAge === "" || r.age === selectedAge) && (selectedGender === "" || r.gender === selectedGender) );
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = `<p><strong>${filtered.length} reviews found</strong></p>` + 
+        filtered.map(r => `<div class="result-item"><strong>${r.name}</strong>: ${r.text}</div>`).join("");
+    
+    // GSAP Animation
+     gsap.to(".filter-section", {
+    opacity: 1,
+    y: -10,
+    duration: 0.6,
+    ease: "power1.out"
+});
+    gsap.from(".result-item", {
+        opacity: 0,
+        y: 10,
+        stagger: 0.1,
+        duration: 0.4,
+        ease: "power1.out"
+    });
+   
+}
+
+</script>
+
+</body>
+</html>

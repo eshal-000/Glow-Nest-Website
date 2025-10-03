@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Veterinarian Profiles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+       * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .hero-section {
+      position: relative;
+      background: linear-gradient(-45deg, #f8e1e9, #fce4ec, #f3e5f5, #e1f5fe);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      padding: 80px 20px;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-section h1 {
+      color: #e91e63;
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out forwards;
+      z-index: 1;
+      position: relative;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-section p {
+      color: #333;
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out 0.4s forwards;
+      z-index: 1;
+      position: relative;
+    }
+
+    .details-button {
+      background-color: #e91e63;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: slideIn 1.2s ease-out 0.8s forwards;
+      z-index: 1;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+    }
+
+    .details-button:hover {
+      background-color: #c2185b;
+      transform: scale(1.1) rotate(2deg);
+      box-shadow: 0 6px 20px rgba(233, 30, 99, 0.6);
+    }
+
+    .more-details {
+      display: none;
+      max-width: 600px;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      color: #333;
+      font-size: 1rem;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    .more-details.show {
+      display: block;
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      animation: revealDetails 0.5s ease-out forwards;
+    }
+
+    /* Particle Effect */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(233, 30, 99, 0.3);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes revealDetails {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+
+      .hero-section p {
+        font-size: 1rem;
+      }
+
+      .details-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+    body {
+      background-color: white;
+      color: black;
+    }
+    .h2 {
+      color: #e91e63;
+      text-align: center;
+      font-weight: 600;
+      font-size: 50px;
+      margin-top: 1cm;
+    }
+    .vet-card {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(240, 97, 156, 0.2);
+      background: #f894b5;
+      color: #333;
+      transition: transform 0.3s;
+    }
+    .vet-card:hover {
+      transform: translateY(-5px);
+    }
+    .vet-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+    }
+    .btn-outline {
+      background: #e91e63;
+      color: white;
+      border-radius: 25px;
+      padding: 8px 18px;
+      border: none;
+    }
+    .btn-outline:hover {
+      background: #d81c67;
+      color: #fff;
+    }
+    .modal-content {
+      border-radius: 20px;
+    }
+    .modal-header {
+      background: #e91e63;
+      color: white;
+      border-radius: 20px 20px 0 0;
+    }
+    .nav-tabs .nav-link {
+      color: #e91e63;
+    }
+    .nav-tabs .nav-link.active {
+      background: #e91e63;
+      color: white;
+    }
+    .case-card {
+      background: #f8f8f8;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+.modal-content {
+  border-radius: 20px;
+  background: #fffaf7;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <h1>Our Doctors & Medicated Skin Care Products</h1>
+    <p>At Glownest, our expert dermatologists craft premium medicated skin care products tailored to your unique needs. Discover solutions that blend science and care for radiant, healthy skin.</p>
+    <button class="details-button" onclick="toggleDetails()">More Details</button>
+    <div class="more-details" id="detailsContent">
+      Our board-certified doctors use cutting-edge research to develop products that address acne, aging, and sensitive skin. Each formula is designed to deliver visible results while prioritizing skin health.
+    </div>
+  </section>
+
+
+
+<h1 class="h2">👩‍⚕️ <u>Our Dermatologists</u></h1> 
+
+<div class="container py-5">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Dr. Ayesha Card -->
+    <div class="col-md-4">
+      <div class="card vet-card">
+        <img src="d1.jpg" class="vet-img" alt="Dr. Ayesha">
+        <div class="card-body text-center">
+          <h5 class="card-title">Dr. Ayesha Khan</h5>
+          <p class="text-muted">Acne & Skin Specialist</p>
+          <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#dermModal1">View Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Sara Card -->
+    <div class="col-md-4">
+      <div class="card vet-card">
+        <img src="d2.jpg" class="vet-img" alt="Dr. Sara">
+        <div class="card-body text-center">
+          <h5 class="card-title">Dr. Sara Malik</h5>
+          <p class="text-muted">Anti-Aging Expert</p>
+          <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#dermModal2">View Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dr. Hira Card -->
+    <div class="col-md-4">
+      <div class="card vet-card">
+        <img src="d3.jpg" class="vet-img" alt="Dr. Hira">
+        <div class="card-body text-center">
+          <h5 class="card-title">Dr. Hira Ahmed</h5>
+          <p class="text-muted">Skin Brightening Specialist</p>
+          <button class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#dermModal3">View Profile</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal - Dr. Ayesha -->
+<div class="modal fade" id="dermModal1" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-4">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Dr. Ayesha Khan</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#details1">Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#appointments1">Appointments</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cases1">Case Studies</button></li>
+        </ul>
+        <div class="tab-content">
+          <!-- Details -->
+          <div class="tab-pane fade show active" id="details1">
+            <p><strong>Specialization:</strong> Acne & Skin Care</p>
+            <p><strong>Experience:</strong> 12 years in dermatology</p>
+            <p><strong>Education:</strong> MBBS, FCPS (Dermatology)</p>
+            <p><strong>Clinic:</strong> DHA Phase 6, Karachi</p>
+          </div>
+          <!-- Appointments -->
+          <div class="tab-pane fade" id="appointments1">
+            <form>
+              <label class="form-label">Choose Date</label>
+              <input type="date" class="form-control mb-3">
+              <label class="form-label">Choose Time</label>
+              <select class="form-select mb-3">
+                <option>10:00 AM</option><option>1:00 PM</option><option>4:00 PM</option>
+              </select>
+              <button type="submit" class="btn btn-success">Book Appointment</button>
+            </form>
+          </div>
+          <!-- Cases -->
+          <div class="tab-pane fade" id="cases1">
+            <div class="case-card"><h5>Acne Treatment</h5><p>Cleared severe acne in 4 months using GlowNest acne kit.</p></div>
+            <div class="case-card"><h5>Skin Rejuvenation</h5><p>Restored glow with Vitamin C treatments.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal - Dr. Sara -->
+<div class="modal fade" id="dermModal2" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-4">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Dr. Sara Malik</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#details2">Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#appointments2">Appointments</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cases2">Case Studies</button></li>
+        </ul>
+        <div class="tab-content">
+          <!-- Details -->
+          <div class="tab-pane fade show active" id="details2">
+            <p><strong>Specialization:</strong> Anti-Aging & Wrinkle Care</p>
+            <p><strong>Experience:</strong> 15 years in dermatology</p>
+            <p><strong>Education:</strong> MBBS, MD (Dermatology)</p>
+            <p><strong>Clinic:</strong> Clifton, Karachi</p>
+          </div>
+          <!-- Appointments -->
+          <div class="tab-pane fade" id="appointments2">
+            <form>
+              <label class="form-label">Choose Date</label>
+              <input type="date" class="form-control mb-3">
+              <label class="form-label">Choose Time</label>
+              <select class="form-select mb-3">
+                <option>11:00 AM</option><option>2:00 PM</option><option>6:00 PM</option>
+              </select>
+              <button type="submit" class="btn btn-success">Book Appointment</button>
+            </form>
+          </div>
+          <!-- Cases -->
+          <div class="tab-pane fade" id="cases2">
+            <div class="case-card"><h5>Wrinkle Reduction</h5><p>Reduced wrinkles with GlowNest Retinol regimen.</p></div>
+            <div class="case-card"><h5>Face Lift Therapy</h5><p>Non-surgical face lift improved skin firmness.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal - Dr. Hira -->
+<div class="modal fade" id="dermModal3" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-4">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Dr. Hira Ahmed</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-3" role="tablist">
+          <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#details3">Details</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#appointments3">Appointments</button></li>
+          <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#cases3">Case Studies</button></li>
+        </ul>
+        <div class="tab-content">
+          <!-- Details -->
+          <div class="tab-pane fade show active" id="details3">
+            <p><strong>Specialization:</strong> Skin Brightening & Glow</p>
+            <p><strong>Experience:</strong> 10 years in dermatology</p>
+            <p><strong>Education:</strong> MBBS, Diploma in Aesthetic Medicine</p>
+            <p><strong>Clinic:</strong> Gulshan, Karachi</p>
+          </div>
+          <!-- Appointments -->
+          <div class="tab-pane fade" id="appointments3">
+            <form>
+              <label class="form-label">Choose Date</label>
+              <input type="date" class="form-control mb-3">
+              <label class="form-label">Choose Time</label>
+              <select class="form-select mb-3">
+                <option>12:00 PM</option><option>3:00 PM</option><option>7:00 PM</option>
+              </select>
+              <button type="submit" class="btn btn-success">Book Appointment</button>
+            </form>
+          </div>
+          <!-- Cases -->
+          <div class="tab-pane fade" id="cases3">
+            <div class="case-card"><h5>Skin Brightening</h5><p>Achieved glowing skin in 2 months using Vitamin C Serum.</p></div>
+            <div class="case-card"><h5>HydraFacial</h5><p>Improved hydration and glow with Hydra Moist facial care.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

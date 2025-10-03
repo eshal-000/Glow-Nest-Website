@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skincare Routine Cards</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    body {
+      background: linear-gradient(180deg, #fce4ec, #fff0f5);
+    }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(233, 30, 99, 0.3);
+      border-radius: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(233, 30, 99, 0.3);
+      border: 2px solid #e91e63;
+    }
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(45deg, #e91e63, #ff8a9d);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+      animation: pulse 2.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    .header-text {
+      background: linear-gradient(90deg, #e91e63, #ff6090);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .starburst {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, rgba(233, 30, 99, 0.3), transparent);
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    .cta-button {
+      background: linear-gradient(45deg, #e91e63, #ff6090);
+      transition: transform 0.2s ease;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+    }
+    .tooltip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(233, 30, 99, 0.9);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      opacity: 0;
+      pointer-events: none;
+      width: max-content;
+      max-width: 180px;
+      text-align: center;
+    }
+    .card:hover .tooltip {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-sans min-h-screen">
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-5xl font-extrabold text-center mb-16 header-text drop-shadow-md">
+        Your Radiant Skincare Journey
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card 1: Wash Your Face -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Lukewarm water keeps skin soft!</div>
+          <div class="icon-circle">
+            <i class="fas fa-soap fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">1. Wash Your Face</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Cleanse away the day’s dirt with a gentle cleanser. Use soft, circular motions for 60 seconds, rinse with lukewarm water, and pat dry gently.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+        <!-- Card 2: Remove Makeup -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Double-cleansing prevents breakouts!</div>
+          <div class="icon-circle">
+            <i class="fas fa-water fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">2. Remove Makeup</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Use micellar water or cleansing oil to remove all makeup before cleansing. Hold a cotton pad over eyes to dissolve stubborn makeup gently.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+        <!-- Card 3: Moisturize -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Hydration boosts your glow!</div>
+          <div class="icon-circle">
+            <i class="fas fa-tint fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">3. Don’t Skip Moisturizer</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Hydrate with a moisturizer suited to your skin type. Apply with upward motions to lock in moisture and support overnight repair.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+        <!-- Card 4: Medicated Treatments -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Start treatments slowly!</div>
+          <div class="icon-circle">
+            <i class="fas fa-vial fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">4. Add Treatments</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Use serums or spot treatments like salicylic acid or niacinamide. Apply sparingly and follow with moisturizer to avoid irritation.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+        <!-- Card 5: Move Softly -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Gentle touch soothes skin!</div>
+          <div class="icon-circle">
+            <i class="fas fa-hand-sparkles fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">5. Move Softly</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Apply products with gentle, circular strokes. Avoid harsh rubbing to keep your skin calm and protected from irritation.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+        <!-- Card 6: Personalize -->
+        <div class="card rounded-2xl shadow-xl p-8 text-center relative">
+          <div class="starburst"></div>
+          <div class="tooltip">Tip: Masks add a spa-like vibe!</div>
+          <div class="icon-circle">
+            <i class="fas fa-heart fa-2x"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-pink-600 mb-4">6. Personalize</h3>
+          <p class="text-gray-600 leading-relaxed mb-4">Add a face mask, facial oil, or calming mist to make your routine special. Adjust products seasonally for your skin’s needs.</p>
+          <button class="cta-button text-white font-semibold py-2 px-4 rounded-full">Try It</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

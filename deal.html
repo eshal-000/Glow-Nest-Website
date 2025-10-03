@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.deal-ticker {
+  position: sticky;
+  top: 60px; 
+  z-index: 999; 
+  background-color: #ffe0e6;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid #ffb6c1;
+  border-bottom: 2px solid #ffb6c1;
+  padding: 10px 0;
+}
+.ticker-text {
+  display: inline-block;
+  padding-left: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b3003c;
+  animation: tickerMove 15s linear infinite;
+}
+
+@keyframes tickerMove {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+body{
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  ;
+  color: #e91e63;
+  letter-spacing: 1px;
+  order: 1; 
+}
+
+.nav-left {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+  order: 2;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover {
+  color: #e91e63;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 150px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #ffedf5;
+  color: #e91e63;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.search {
+  order: 3;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 5px rgba(255, 77, 166, 0.5);
+}
+
+
+
+.fifty-deal {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-image: url('skin imgs/pro.jpg'); /* Update with your correct path */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding: 60px 40px;
+  border-bottom-left-radius: 120px;
+  border-bottom-right-radius: 120px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+
+.fifty-deal .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.646); 
+  z-index: 1;
+}
+
+.deal-left,
+.deal-right {
+  position: relative;
+  z-index: 2; 
+}
+
+.deal-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.deal-left h2 {
+font-size: 40px;
+  color: #b0003a;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+
+}
+
+.deal-left p {
+  font-size: 1.1rem;
+  color:white;
+  text-shadow: 0 2px 4px rgba(1, 1, 1, 0.8);
+
+  margin-bottom: 20px;
+}
+
+.shop-btn {
+  background-color: #d90429;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.shop-btn:hover {
+  background-color: #a40022;
+}
+
+.deal-right {
+  flex: 1;
+  text-align: right;
+}
+
+.deal-right img {
+  max-width: 320px;
+  border-radius: 20px;
+}
+
+.bundle-grid {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 40px;
+   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.bundle-card {
+  position: relative;
+  width: 300px;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bundle-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.bundle-card:hover img {
+  transform: scale(1.1);
+}
+
+.bundle-card h3,
+.bundle-card p,
+.bundle-card .price,
+.bundle-card button {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  color: white;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.bundle-card h3 {
+  top: 40%;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.bundle-card p {
+  top: 50%;
+  font-size: 14px;
+}
+
+.bundle-card .price {
+  top: 62%;
+  font-size: 16px;
+}
+
+.bundle-card button {
+  top: 75%;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 25px;
+}
+.bundle-card button:hover{
+background-color: #d90429;
+cursor: pointer;
+color: white;
+}
+.bundle-card:hover h3,
+.bundle-card:hover p,
+.bundle-card:hover .price,
+.bundle-card:hover button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: dark overlay */
+.bundle-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+.bundle-heading{
+    text-align: center;
+    font-size: 35px;
+    color: #d90429;
+    margin-top: 40px;
+}
+.addons-section {
+  padding: 60px 40px;
+  background-color: #fef5f8;
+  text-align: center;
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.addon-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.addon-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.addon-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.addon-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.addon-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.addon-card .price {
+  font-weight: bold;
+  color: #c2185b;
+  margin-bottom: 12px;
+}
+
+.cart-btn {
+  background-color: #ff80ab;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.cart-btn:hover {
+  background-color: #d81b60;
+}
+.section-title{
+    color: #d90429;
+    font-size: 35px;
+}
+.deal-spotlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #ffe0ec 50%, #ffffff 50%);
+  padding: 80px 60px;
+  position: relative;
+  border-radius: 0 0 120px 120px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.deal-text {
+  width: 50%;
+  padding: 20px;
+}
+
+.deal-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #d6006f;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.deal-text p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.shop-btn {
+  background-color: #d6006f;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.shop-btn:hover {
+  background-color: #ad005b;
+}
+
+.deal-image {
+  width: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.deal-image img {
+  width: 80%;
+  max-width: 350px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transform: translateY(-30px);
+}
+.trust-badges {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  background-color: #fff7fa;
+  border-radius: 30px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 120px;
+}
+
+.badge img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.badge p {
+  font-weight: bold;
+  color: #333;
+  font-size: 14px;
+}
+.footer {
+  background-color: #f7f7f7;
+  color: #333;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 60px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #d81b60;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section a:hover {
+  color: #6a994e;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section input[type="email"] {
+  padding: 8px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-section button {
+  padding: 8px 12px;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.footer-section button:hover {
+  background-color:#d81b60;
+}
+
+.footer-section.social a img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+
+trending-section {
+  padding: 60px 20px;
+  background-color: #fffdf9;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+.trending-section h2 {
+  font-size: 40px;
+  color:rgb(161, 11, 58);
+  margin-bottom: 40px;
+
+}
+.trending-section h2 span{
+    color: black;
+    font-size: 40px;
+}
+.trending-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.video-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 250px;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+.trending-section h2{
+  text-align: center;
+}
+#three-card  {
+  position: fixed;
+  top: 50%;
+  left: 27cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#three-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#three-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#three-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#three-card .btn:hover {
+  background-color: #e05590;
+}
+#two-card  {
+  position: fixed;
+  top: 50%;
+  left: 18cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#two-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#two-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#two-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#two-card .btn:hover {
+  background-color: #e05590;
+}
+
+#one-card  {
+  position: fixed;
+  top: 50%;
+  left: 8.6cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#one-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#one-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#one-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#one-card .btn:hover {
+  background-color: #e05590;
+}
+#four-card  {
+  position: fixed;
+  top: 50%;
+  left: 5cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#four-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#four-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#four-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#four-card .btn:hover {
+  background-color: #e05590;
+}
+  #five-card  {
+  position: fixed;
+  top: 50%;
+  left: 17cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#five-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#five-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#five-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#five-card .btn:hover {
+  background-color: #e05590;
+}
+  #six-card  {
+  position: fixed;
+  top: 50%;
+  left: 28cm;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* default hidden */
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#six-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#six-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+#six-card  .btn {
+  background-color: #b0094c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#six-card .btn:hover {
+  background-color: #e05590;
+}
+  </style>
+</head>
+<body>
+     <nav>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+   <div class="dropdown">
+  <a href="#">Products ▾</a>
+  <div class="dropdown-content">
+    <a href="toner.html">Toner</a>
+    <a href="serum.html">Serum</a>
+    <a href="cleanser.html">Cleanser</a>
+   <a href="face wash.html">Face Wash</a>
+   <a href="sunblock.html">sunblock</a>
+    <a href="deal.html">50% of deals</a>
+  </div>
+    <a href="bundles.html">Bundles</a>
+</div>
+       <a href="glowy.html">Services</a>
+    
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+
+    <div class="logo">GlowNest</div>
+
+  <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+  <div class="deal-ticker">
+  <div class="ticker-text">
+    🔥 Limited Time Offer: Get 50% OFF on all EstiGlow Cleansers — Shop Now!
+  </div>
+</div>
+
+
+<section class="fifty-deal">
+    <div class="overlay"></div>
+  <div class="deal-left">
+    <h2>Get 50% OFF on Your Skincare Essentials!</h2>
+    <p>From cleansers to serums, enjoy glowing skin with half the price. Limited time only!</p>
+
+  </div>
+
+</section>
+
+<section class="bundle-section">
+  <h2 class="bundle-heading">Featured Bundles</h2>
+  <div class="bundle-grid">
+
+    <div class="bundle-card">
+      <img src="skin imgs/two.avif" alt="Cleanser + Toner">
+      <h3>Daily Glow Duo</h3>
+      
+      <p>Includes:  Glow Drops Elixir + Cloud Cream SPF </p>
+      <div class="price"><span class="old-price">Rs. 3,000</span> Rs. 1,499</div>
+      <button class="cart-btn"onclick="one()">Add to Cart</button>
+    </div>
+<div id="one-card"></div>
+  
+    <div class="bundle-card">
+      <img src="skin imgs/one.webp" alt="Serum + Cream">
+      <h3>Hydra Boost Pack</h3>
+      <p>Includes: Hyaluronic Water Cream+Mineral Mist Toner</p>
+      <div class="price"><span class="old-price">Rs. 4,000</span> Rs. 1,999</div>
+      <button class="cart-btn"onclick="two()">Add to Cart</button>
+    </div>
+<div id="two-card"></div>
+  
+    <div class="bundle-card">
+      <img src="skin imgs/three.webp" alt="Full Kit">
+      <h3>Full Glow Kit</h3>
+      <p>Cleanser, Toner, Serum, Cream</p>
+      <div class="price"><span class="old-price">Rs. 6,000</span> Rs. 2,999</div>
+      <button class="cart-btn"onclick="three()">Add to Cart</button>
+    </div>
+<div id="three-card"></div>
+  </div>
+</section>
+<section class="addons-section">
+  <h2 class="section-title">Bonus Add-Ons</h2>
+  <div class="addons-grid">
+
+    <div class="addon-card">
+      <img src="skin imgs/pad.webp" alt="Exfoliating Pad">
+      <h3>Exfoliating Pad</h3>
+      <p>Gently removes dead skin cells for smoother texture.</p>
+      <div class="price">Rs. 499</div>
+      <button class="cart-btn"onclick="four()">Add</button>
+    </div>
+<div id="four-card"></div>
+    <div class="addon-card">
+      <img src="skin imgs/headband.jpg" alt="Skincare Headband">
+      <h3>Skincare Headband</h3>
+      <p>Soft & stretchy — keeps hair out during your routine.</p>
+      <div class="price">Rs. 299</div>
+      <button class="cart-btn"onclick="five()">Add</button>
+    </div>
+<div id="five-card"></div>
+    <div class="addon-card">
+      <img src="skin imgs/mini.jpg" alt="Mini Spatula">
+      <h3>Mini Spatula</h3>
+      <p>Perfect for scooping creams without the mess.</p>
+      <div class="price">Rs. 199</div>
+      <button class="cart-btn"onclick="six()">Add</button>
+    </div>
+<div id="six-card"></div>
+  </div>
+</section>
+
+  <section class="trending-section">
+  <h2>Light • Camera <span>Glow</span>  </h2>
+  
+  <div class="trending-row">
+    <div class="video-card">
+      <video src="skin imgs/vedio5.mp4" controls></video>
+      <p>Glowing Skin Routine</p>
+    </div>
+    <div class="video-card">
+      <video src="skin imgs/vedieo6.mp4" controls></video>
+      <p>Morning Cleanser Demo</p>
+    </div>
+    <div class="video-card">
+      <video src="skin imgs/vedioo3.mp4" controls></video>
+      <p>Hydration Tips 💧</p>
+    </div>
+    <div class="video-card">
+      <video src="skin imgs/vedio4.mp4" controls></video>
+      <p>Night Care Ritual 🌙</p>
+    </div>
+  </div>
+</section>
+<section class="deal-spotlight">
+  <div class="deal-text">
+    <h2>Exclusive 50% Off Deal!</h2>
+    <p>Don't miss out on our limited-time skincare bundles — your glow-up starts now.</p>
+    <button class="shop-btn">Shop the Deal</button>
+  </div>
+
+  <div class="deal-image">
+    <img src="skin imgs/two.avif" alt="Skincare Deal">
+  </div>
+</section>
+<div id="cart-popup" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(186, 47, 66);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+">
+  ✅ Deal Activated!
+</div>
+<section class="trust-badges">
+  <div class="badge">
+    <img src="skin imgs/icon2.png" alt="100% Original">
+    <p>100% Original</p>
+  </div>
+  <div class="badge">
+    <img src="skin imgs/icon1.png" alt="Dermatologist Approved">
+    <p>Dermatologist Approved</p>
+  </div>
+  <div class="badge">
+    <img src="skin imgs/icon3.png" alt="Cruelty-Free">
+    <p>Cruelty-Free</p>
+  </div>
+  <div class="badge">
+    <img src="skin imgs/icon4.png" alt="Cruelty-Free">
+    <p>No Harsh Chemicals</p>
+  </div>
+  <div class="badge">
+    <img src="skin imgs/icon5.png" alt="Cruelty-Free">
+    <p>Secure Checkout</p>
+  </div>
+</section>
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section about">
+      <h3>Glow Nest</h3>
+      <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+    </div>
+
+  
+    <div class="footer-section links">
+      <h4>GlowNest</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-section newsletter">
+      <h4>Join Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+      <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 GlowNest. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  
+  gsap.from(".bundle-grid", {
+    opacity: 0,
+    scale: 0.8,
+    delay:0.5,
+    duration: 1.2,
+    stagger: 0.3,
+    ease: "back.out(1.7)",
+    scrollTrigger: {
+      trigger: ".bundle-grid",
+      start: "top 80%",
+    }
+  });
+
+ 
+  gsap.from(".addons-grid", {
+    y: 100,
+    opacity: 0,
+    duration: 1.2,
+    delay:2,
+    stagger: 0.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: "addons-grid",
+      start: "top 80%",
+    }
+  });
+
+  gsap.from(".deal-text", {
+    x: -100,
+    opacity: 0,
+    delay:1,
+    duration: 1.2,
+    scrollTrigger: {
+      trigger: ".deal-spotlight",
+      start: "top 85%",
+    }
+  });
+
+  gsap.from(".deal-image img", {
+    x: 100,
+    opacity: 0,
+    duration: 1.2,
+    scrollTrigger: {
+      trigger: ".deal-spotlight",
+      start: "top 85%",
+    }
+  });
+
+
+  gsap.from(".trust-badges .badge", {
+    scale: 0,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.2,
+    ease: "back.out(1.7)",
+    scrollTrigger: {
+      trigger: ".trust-badges",
+      start: "top 85%",
+    }
+  });
+      function one() {
+  const onecard = document.getElementById("one-card");
+  onecard.innerHTML = `
+    <h3>Daily Glow Duo</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="oneoff()">Close</button>
+  `;
+  onecard.style.display = "block";
+}
+
+function oneoff() {
+  document.getElementById("one-card").style.display = "none";
+}
+
+
+function two() {
+  const twocard = document.getElementById("two-card");
+  twocard.innerHTML = `
+    <h3>Hydra Boost Pack</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="twooff()">Close</button>
+  `;
+  twocard.style.display = "block";
+}
+
+function twooff() {
+  document.getElementById("two-card").style.display = "none";
+}
+function three() {
+  const threecard = document.getElementById("three-card");
+  threecard.innerHTML = `
+    <h3>Full Glow Kit</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="threeoff()">Close</button>
+  `;
+  threecard.style.display = "block";
+}
+
+function threeoff() {
+  document.getElementById("three-card").style.display = "none";
+}
+function four() {
+  const fourcard = document.getElementById("four-card");
+  fourcard.innerHTML = `
+    <h3>Exfoliating Pad </h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="fouroff()">Close</button>
+  `;
+  fourcard.style.display = "block";
+}
+
+function fouroff() {
+  document.getElementById("four-card").style.display = "none";
+}
+function five() {
+  const fivecard = document.getElementById("five-card");
+  fivecard.innerHTML = `
+    <h3>Skincare Headband</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="fiveoff()">Close</button>
+  `;
+  fivecard.style.display = "block";
+}
+
+function fiveoff() {
+  document.getElementById("five-card").style.display = "none";
+}
+function six() {
+  const sixcard = document.getElementById("six-card");
+  sixcard.innerHTML = `
+    <h3>Mini Spatula</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="sixoff()">Close</button>
+  `;
+  sixcard.style.display = "block";
+}
+
+function sixoff() {
+  document.getElementById("six-card").style.display = "none";
+}
+   document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".add-to-cart, .shop-btn");
+    const popup = document.getElementById("cart-popup");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        popup.style.display = "block";
+
+        setTimeout(() => {
+          popup.style.display = "none";
+        }, 3000);
+      });
+    });
+  });
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      let query = searchInput.value.toLowerCase().trim();
+
+      
+      if (query.includes("sunblock")) {
+        window.location.href = "sunblock.html";
+      } else if (query.includes("serum")) {
+        window.location.href = "serum.html";
+      } else if (query.includes("toner")) {
+        window.location.href = "toner.html";
+      } else if (query.includes("facewash")) {
+        window.location.href = "facewash.html";
+      }
+      else if (query.includes("deal")) {
+        window.location.href = "deal.html";
+      }
+      else if (query.includes("bundles")) {
+        window.location.href = "bundles.html";
+      }
+      else if (query.includes("home")) {
+        window.location.href = "home.html";
+      }
+      else if (query.includes("about")) {
+        window.location.href = "about.html";
+      }
+      else {
+        alert("Product not found! 🙁");
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

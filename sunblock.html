@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sunblock.css">
+</head>
+<body>
+ <nav>
+    <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <div class="dropdown">
+        <a href="#">Products ▾</a>
+        <div class="dropdown-content">
+          <a href="toner.html">Toner</a>
+          <a href="serum.html">Serum</a>
+          <a href="cleanser.html">Cleanser</a>
+          <a href="sunblock.html">Sunblock</a>
+       <a href="face wash.html">Face Wash</a>
+    <a href="deal.html">50% of deals</a>
+        </div>
+          <a href="bundles.html">Bundles</a>
+      </div>
+       <a href="glowy.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+    <div class="logo">GlowNest</div>
+ <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+
+<section class="sunblock-banner">
+  <div class="overlay">
+    <div class="banner-content">
+      <h1>GlowNest Sunblock</h1>
+      <p>Shield your skin with SPF 50+ protection – lightweight, non-greasy, and everyday perfect.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section class="sunblock-section">
+    <h2 class="section-title">Our Sunblock Collection</h2>
+    <div class="sunblock-grid">
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/lu.jpg" alt="Sunblock 1">
+        </div>
+        <div class="card-content">
+          <h3>Luminous Sun Gel</h3>
+          <p>Gel-based sunblock that absorbs quickly and feels light.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/bright.jpg" alt="Sunblock 2">
+        </div>
+        <div class="card-content">
+          <h3>BrightBlock SPF 50+</h3>
+          <p>Brightening sunblock that prevents dark spots and tanning.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/ultra.jpg" alt="Sunblock 3">
+        </div>
+        <div class="card-content">
+          <h3>UltraSun Protect</h3>
+          <p>High SPF formula that keeps skin safe and soft.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/armor.jpg" alt="Sunblock 4">
+        </div>
+        <div class="card-content">
+          <h3>SkinArmor SPF 45</h3>
+          <p>Non-greasy, shine-free protection.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/hydra.jpg" alt="Sunblock 5">
+        </div>
+        <div class="card-content">
+          <h3>HydraSun Protect</h3>
+          <p>Water-resistant for active lifestyle.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/barrier.jpg" alt="Sunblock 6">
+        </div>
+        <div class="card-content">
+          <h3>SunBarrier Gel</h3>
+          <p>High-performance sun protection.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/velvet.jpg" alt="Sunblock 7">
+        </div>
+        <div class="card-content">
+          <h3>SunVelvet Cream</h3>
+          <p>Light coverage with sun care.</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/guard.jpg" alt="Sunblock 8">
+        </div>
+        <div class="card-content">
+          <h3>GoldenGuard SPF 30</h3>
+          <p>Protects while giving a healthy sun-kissed look..</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="sunblock-card">
+        <div class="card-image">
+          <img src="skin imgs/cream.jpg" alt="Sunblock 9">
+        </div>
+        <div class="card-content">
+          <h3>SolarLuxe Cream</h3>
+          <p>Premium sunblock with a silky, luminous finish</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<div id="cart-popup" style="
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #df2a66;;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 9999;
+">
+  ✅ This product has been added to cart
+</div>
+<section id="sunscreen-donts" class="py-5">
+  <div class="container chart-section">
+    
+    <div class="chart-text">
+      <h2>Do’s & Don’ts of Sunscreen</h2>
+      <ul>
+        <li>Do apply at least 20 mins before going out.</li>
+        <li>Don’t skip areas like ears, neck, and lips.</li>
+        <li>Do reapply every 2–3 hours.</li>
+        <li>Don’t rely only on makeup with SPF.</li>
+        <li>Do choose the correct SPF for your skin type.</li>
+        <li>Don’t forget water-resistant sunscreen if swimming.</li>
+      </ul>
+    </div>
+    
+    <div class="chart-image">
+      <img src="skin imgs/chartt.jpg" alt="Do's and Don'ts Sunscreen Chart">
+    </div>
+    
+  </div>
+</section>
+<section id="before-after" class="py-5">
+  <div class="container">
+    <h2 class="section-title">Before & After Results</h2>
+
+    <div class="gallery">
+
+      <div class="gallery-card">
+        <img src="skin imgs/sb  before.jpg" alt="Before Treatment">
+        <div class="label before">Before</div>
+      </div>
+
+      <div class="gallery-card">
+        <img src="skin imgs/aftersb.jpg" alt="After Treatment">
+        <div class="label after">After</div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="animated-heading">
+  <h1 class="typing-effect">GlowNest Protects Your Skin Daily</h1>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-section about">
+      <h3>Glow Nest</h3>
+      <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+    </div>
+
+  
+    <div class="footer-section links">
+      <h4>GlowNest</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+
+ 
+    <div class="footer-section newsletter">
+      <h4>Join Our Newsletter</h4>
+      <form>
+        <input type="email" placeholder="Your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+
+    <div class="footer-section social">
+      <h4>Follow Us</h4>
+      <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+      <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+      <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 GlowNest. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  
+  gsap.from("#sunscreen-donts .chart-text", {
+    x: -100,
+    opacity: 0,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: "#sunscreen-donts",
+      start: "top 80%", 
+    }
+  });
+
+
+  gsap.from("#sunscreen-donts .chart-image", {
+    x: 100,
+    opacity: 0,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: "#sunscreen-donts",
+      start: "top 80%",
+    }
+  });
+
+  gsap.from("#sunscreen-donts ul li", {
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    stagger: 0.2,
+    scrollTrigger: {
+      trigger: "#sunscreen-donts",
+      start: "top 75%",
+    }
+  });
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  
+  gsap.from("#before-after .section-title", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#before-after",
+      start: "top 80%"
+    }
+  });
+
+  gsap.from("#before-after .gallery-card:first-child", {
+    x: -150,
+    opacity: 0,
+    duration: 1.5,
+    scrollTrigger: {
+      trigger: "#before-after",
+      start: "top 75%"
+    }
+  });
+
+ 
+  gsap.from("#before-after .gallery-card:last-child", {
+    x: 150,
+    opacity: 0,
+    duration: 1.5,
+    delay:1,
+    scrollTrigger: {
+      trigger: "#before-after",
+      start: "top 75%"
+    }
+  });
+  gsap.from("#before-after .label", {
+    opacity: 0,
+    scale: 0.8,
+     delay:1,
+    duration: 0.6,
+    stagger: 0.3,
+    scrollTrigger: {
+      trigger: "#before-after",
+      start: "top 70%"
+    }
+  });
+  gsap.registerPlugin(ScrollTrigger);
+
+ 
+  gsap.from(".sunblock-section .section-title", {
+    y: -50,
+    opacity: 0,
+    duration: 1,
+     delay:1,
+    scrollTrigger: {
+      trigger: ".sunblock-section",
+      start: "top 80%"
+    }
+  });
+
+  gsap.from(".sunblock-card", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    stagger: 0.2,
+     delay:1,
+    scrollTrigger: {
+      trigger: ".sunblock-section",
+      start: "top 75%"
+    }
+  });
+const buttons = document.querySelectorAll(".add-to-cart");
+  const popup = document.getElementById("cart-popup");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      popup.style.display = "block";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 3000);
+    });
+  });
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      let query = searchInput.value.toLowerCase().trim();
+
+      
+      if (query.includes("sunblock")) {
+        window.location.href = "sunblock.html";
+      } else if (query.includes("serum")) {
+        window.location.href = "serum.html";
+      } else if (query.includes("toner")) {
+        window.location.href = "toner.html";
+      } else if (query.includes("face wash")) {
+        window.location.href = "face wash.html";
+      }
+      else if (query.includes("deal")) {
+        window.location.href = "deal.html";
+      }
+      else if (query.includes("bundles")) {
+        window.location.href = "bundles.html";
+      }
+      else if (query.includes("home")) {
+        window.location.href = "home.html";
+      }
+      else if (query.includes("about")) {
+        window.location.href = "about.html";
+      }
+      else {
+        alert("Product not found! 🙁");
+      }
+    }
+  });
+  </script>
+</body>
+</html>

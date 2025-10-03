@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlowNest - Toners</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      overflow-x: hidden;
+    }
+
+   nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 12px 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  ;
+  color: #e91e63;
+  letter-spacing: 1px;
+  order: 1; 
+}
+
+.nav-left {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+  order: 2;
+}
+
+.nav-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-left a:hover {
+  color: #e91e63;
+}
+
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  min-width: 150px;
+  border-radius: 6px;
+  z-index: 10;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background: #ffedf5;
+  color: #e91e63;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.search {
+  order: 3;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff4da6;
+  box-shadow: 0 0 5px rgba(255, 77, 166, 0.5);
+}
+
+
+    .toner-banner {
+  position: relative;
+  height: 90vh;
+  background: url('skin imgs/tonerr.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toner-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 10%;
+}
+
+.text-box {
+  max-width: 500px;
+  color: #fff;
+}
+
+.text-box h1 {
+  font-size: 45px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.text-box p {
+  font-size: 20px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-shadow: 2px 2px 5px black;
+}
+
+.text-box button {
+  padding: 12px 30px;
+  background: #d81b60;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.text-box button:hover {
+  background:#e05590;
+  transform: scale(1.05);
+}
+
+
+    
+    .toner-section {
+      padding: 60px 30px;
+      background: #fff0f5;
+      text-align: center;
+    }
+
+    .toner-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #d63384;
+    }
+
+    .toner-grid-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .toner-card-horizontal {
+      display: flex;
+      flex-direction: row;
+      width: 45%;
+      background: white;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .toner-card-horizontal img {
+      width: 300px;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+    }
+
+    .card-content h3 {
+      font-size: 1.3rem;
+      color: #d63384;
+      margin-bottom: 10px;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .cart-btn {
+      background-color: #d63384;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.3s ease;
+    }
+
+    .cart-btn:hover {
+      background-color: #b82a70;
+    }
+
+    @media (max-width: 768px) {
+      .toner-card-horizontal {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .toner-card-horizontal img {
+        width: 100%;
+        height: 250px;
+      }
+
+      .card-content {
+        align-items: center;
+      }
+
+      .cart-btn {
+        align-self: center;
+      }
+    }
+
+    .testimonial-section {
+      padding: 80px 30px;
+      background: #fef6fb;
+    }
+
+    .testimonial-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .testimonial-img img {
+      width: 350px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    }
+
+    .testimonial-text {
+      max-width: 500px;
+    }
+
+    .testimonial-text h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #c2185b;
+    }
+
+    .testimonial-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .testimonial-text h4 {
+      color: #999;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .testimonial-img img {
+        width: 90%;
+      }
+
+      .testimonial-text {
+        max-width: 100%;
+      }
+    }
+
+    .footer {
+      background-color: #f7f7f7;
+      color: #333;
+      padding: 40px 20px;
+      font-family: Arial, sans-serif;
+      margin-top: 60px;
+    }
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  margin-bottom: 15px;
+  color: #d81b60;
+}
+
+.footer-section p,
+.footer-section li,
+.footer-section a {
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-section a:hover {
+  color: #6a994e;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section input[type="email"] {
+  padding: 8px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.footer-section button {
+  padding: 8px 12px;
+  background-color: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  margin-left: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.footer-section button:hover {
+  background-color:#d81b60;
+}
+
+.footer-section.social a img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 13px;
+  color: #777;
+}
+#one-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 50%;
+margin-left: 11.6cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#one-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#one-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#one-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#one-card .btn:hover {
+  background-color: #e05590;
+}
+
+#three-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 50%;
+margin-left: 11.6cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#three-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#three-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#three-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#three-card .btn:hover {
+  background-color: #e05590;
+}
+
+#four-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 50%;
+margin-left: 11.6cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#four-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#four-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#four-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#four-card .btn:hover {
+  background-color: #e05590;
+}
+#two-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 50%;
+margin-left: 11.6cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#two-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#two-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#two-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#two-card .btn:hover {
+  background-color: #e05590;
+}
+
+
+
+#five-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 80%;
+margin-left: 11.5cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#five-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#five-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#five-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#five-card .btn:hover {
+  background-color: #e05590;
+}
+#six-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 230px;
+  height: 200px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  position: fixed;
+  top: 80%;
+margin-left: 11.5cm;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+  display: none;
+}
+
+
+
+#six-card  h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+#six-card  p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+#six-card .btn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  margin-top: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+#six-card .btn:hover {
+  background-color: #e05590;
+}
+
+
+
+.toner-review-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px;
+  background: #f7f7f7;
+  font-family: sans-serif;
+}
+
+.review-text-area {
+  flex: 1;
+  max-width: 400px;
+  margin-left: -2cm;
+}
+
+.review-text-area h2 {
+  font-size: 40px;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  margin-bottom: 15px;
+  color: #d81b60;
+}
+
+.review-text-area p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+
+.before-after-card {
+  position: relative;
+  width: 350px;
+  height: 420px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  cursor: pointer;
+}
+
+
+.before-after-card img.before-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.6s ease;
+}
+
+
+.before-after-card img.after-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+/* Labels */
+.before-after-card::before {
+  content: "Before";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+}
+.before-after-card:hover::before {
+  content: "After";
+}
+
+
+.before-after-card:hover img.before-img {
+  opacity: 0;
+}
+.before-after-card:hover img.after-img {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+
+ 
+  <nav>
+   <div class="nav-left">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+   <div class="dropdown">
+  <a href="#">Products ▾</a>
+  <div class="dropdown-content">
+    <a href="toner.html">Toner</a>
+    <a href="serum.html">Serum</a>
+    <a href="cleanser.html">Cleanser</a>
+   <a href="face wash.html">Face Wash</a>
+   <a href="sunblock.html">sunblock</a>
+    <a href="deal.html">50% of deals</a>
+  </div>
+    <a href="bundles.html">Bundles</a>
+</div>
+       <a href="glowy.html">Services</a>
+
+      <a href="contact.html">Contact Us</a>
+      <a href="trackorder.html">Track Order</a>
+    </div>
+    <div class="logo">GlowNest</div>
+    <div class="search">
+  <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+</div>
+  </nav>
+
+
+<section class="toner-banner">
+  <div class="overlay">
+    <div class="text-box">
+      <h1>GlowNest Toner</h1>
+      <p>
+        Refresh, hydrate, and balance your skin with our lightweight toner.  
+        Everyday glow with pure hydration ✨
+      </p>
+  <button onclick="shopNow()">Shop Now</button>
+    </div>
+  </div>
+</section>
+
+
+
+  
+  <section class="toner-section">
+    <h2>Our Toners</h2>
+    <div class="toner-grid-horizontal">
+      <div class="toner-card-horizontal">
+        <img src="skin imgs/rose toner.jpg" alt="Rose Toner">
+        <div class="card-content">
+          <h3>Rose Water Toner</h3>
+          <p>Hydrates and refreshes your skin naturally with floral essence.</p>
+    <button onclick="one()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="one-card"></div>
+      </div>
+
+      <div class="toner-card-horizontal">
+        <img src="skin imgs/green tea toner.jpg" alt="Green Tea Toner">
+        <div class="card-content">
+          <h3>Green Tea Toner</h3>
+          <p>Controls oil and calms acne-prone skin with antioxidant power.</p>
+    <button onclick="two()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="two-card"></div>
+      </div>
+
+      <div class="toner-card-horizontal">
+        <img src="skin imgs/c.jpg" alt="Vitamin C Toner">
+        <div class="card-content">
+          <h3>Vitamin C Toner</h3>
+          <p>Brightens skin and boosts natural glow with antioxidants.</p>
+           <button onclick="three()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="three-card"></div>
+      </div>
+
+      <div class="toner-card-horizontal">
+        <img src="skin imgs/vera.jpg" alt="Aloe Vera Toner">
+        <div class="card-content">
+          <h3>Aloe Vera Toner</h3>
+          <p>Soothes redness and hydrates sensitive skin gently.</p>
+              <button onclick="four()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="four-card"></div>
+      </div>
+            <div class="toner-card-horizontal">
+        <img src="skin imgs/lavn.jpg" alt="Rose Toner">
+        <div class="card-content">
+          <h3>Lavender Calming Toner</h3>
+          <p>Relaxes skin, reduces redness, and refreshes tired skin.</p>
+    <button onclick="five()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="five-card"></div>
+      </div>
+
+      <div class="toner-card-horizontal">
+        <img src="skin imgs/natio.jpg" alt="Green Tea Toner">
+        <div class="card-content">
+          <h3>Chamomile Gentle Tone</h3>
+          <p>Perfect for sensitive skin – calms and nourishes.</p>
+    <button onclick="six()" class="cart-btn">Add to Cart</button>
+        </div>
+        <div id="six-card"></div>
+      </div>
+
+    </div>
+  </section>
+<section class="toner-review-section">
+ 
+  <div class="review-text-area">
+    <h2>Real Results with Our Toner </h2>
+    <p>
+      See the difference yourself — our toner refreshes, hydrates, and restores
+      skin’s natural glow. Perfect for daily use and gentle on all skin types.
+    </p>
+  </div>
+
+  
+  <div class="before-after-card">
+    <img src="skin imgs/bb2.jpg"alt="Before Toner" class="before-img">
+    <img src="skin imgs/dd.png" alt="After Toner" class="after-img">
+  </div>
+</section>
+  <section class="testimonial-section">
+    <div class="testimonial-content">
+      <div class="testimonial-img">
+        <img src="skin imgs/girly.png" alt="Happy customer using toner">
+      </div>
+      <div class="testimonial-text">
+        <h2>What Our Customer Says</h2>
+        <p>"I've been using the Rose Water Toner for two weeks now and my skin feels refreshed, smooth, and hydrated. I love how natural and gentle it is!"</p>
+        <h4>- Ayesha, 24</h4>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h3>GlowNest</h3>
+        <p>Natural skincare powered by purity and science. Founded by Sarah & Fatima in 2020.</p>
+      </div>
+      <div class="footer-section links">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Track Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-section newsletter">
+        <h4>Join Our Newsletter</h4>
+        <form>
+          <input type="email" placeholder="Your email" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-section social">
+        <h4>Follow Us</h4>
+        <a href="#"><img src="skin imgs/fb.png" alt="Facebook"></a>
+        <a href="#"><img src="skin imgs/insta.jpg" alt="Instagram"></a>
+        <a href="#"><img src="skin imgs/twitter.png" alt="Twitter"></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 GlowNest. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const cards = document.querySelectorAll(".toner-card-horizontal");
+
+gsap.from(cards[0], {
+  x: -100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[0],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+
+gsap.from(cards[1], {
+  x: 100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[1],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+
+
+gsap.from(cards[2], {
+  x: -100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  delay: 0.3,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[2],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+
+gsap.from(cards[3], {
+  x: 100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  delay: 0.3,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[3],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+gsap.from(cards[4], {
+  x: 100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  delay: 0.3,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[3],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+gsap.from(cards[5], {
+  x: 100,
+  opacity: 0,
+  scale: 0.9,
+  duration: 1.4,
+  delay: 0.3,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: cards[3],
+    start: "top 80%",
+    toggleActions: "play none none none"
+  }
+});
+ gsap.registerPlugin(ScrollTrigger);
+
+ 
+  gsap.from(".testimonial-img", {
+    x: -100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".testimonial-section",
+      start: "top 75%",
+      toggleActions: "play none none none"
+    }
+  });
+   gsap.registerPlugin(ScrollTrigger);
+
+ 
+  gsap.from(".testimonial-text", {
+    x: 100,
+    opacity: 0,
+    duration: 1.5,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".testimonial-section",
+      start: "top 75%",
+      toggleActions: "play none none none"
+    }
+  });
+function one() {
+  let onecard = document.getElementById("one-card");
+  onecard.innerHTML = `
+    <h3>Rose Water Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="update()">Close</button>
+  `;
+  onecard.style.display = "block";
+}
+
+function update() {
+  document.getElementById("one-card").style.display = "none";
+}
+function two() {
+  let twocard = document.getElementById("two-card");
+  twocard.innerHTML = `
+    <h3>Green Tea Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="twooff()">Close</button>
+  `;
+  twocard.style.display = "block";
+}
+
+function twooff() {
+  document.getElementById("two-card").style.display = "none";
+}
+function three() {
+  let threecard = document.getElementById("three-card");
+  threecard.innerHTML = `
+    <h3>Vitamin C Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="threeoff()">Close</button>
+  `;
+  threecard.style.display = "block";
+}
+
+function threeoff() {
+  document.getElementById("three-card").style.display = "none";
+}
+function four() {
+  let fourcard = document.getElementById("four-card");
+  fourcard.innerHTML = `
+    <h3>Aloe Vera Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="fouroff()">Close</button>
+  `;
+  fourcard.style.display = "block";
+}
+
+function fouroff() {
+  document.getElementById("four-card").style.display = "none";
+}
+function five() {
+  let fivecard = document.getElementById("five-card");
+  fivecard.innerHTML = `
+    <h3>Vitamin C Brightening Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="fiveoff()">Close</button>
+  `;
+  fivecard.style.display = "block";
+}
+
+function fiveoff() {
+  document.getElementById("five-card").style.display = "none";
+}
+
+function six() {
+  let sixcard = document.getElementById("six-card");
+  sixcard.innerHTML = `
+    <h3>Hyaluronic Acid Toner</h3>
+    <p>This product has been added to your cart</p>
+    <button class="btn" onclick="sixoff()">Close</button>
+  `;
+  sixcard.style.display = "block";
+}
+
+ gsap.registerPlugin(ScrollTrigger);
+
+  // Left Text Animation
+  gsap.from(".review-text-area", {
+    scrollTrigger: {
+      trigger: ".toner-review-section",
+      start: "top 80%", // jab section 80% viewport pe aayega
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+
+  gsap.from(".before-after-card", {
+    scrollTrigger: {
+      trigger: ".toner-review-section",
+      start: "top 80%",
+    },
+    scale: 0.8,
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "back.out(1.7)"
+  });
+  function shopNow() {
+    alert("Toner added to your cart 🛒");
+  }
+  const searchInput = document.getElementById("searchInput");
+
+  searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      let query = searchInput.value.toLowerCase().trim();
+
+      
+      if (query.includes("sunblock")) {
+        window.location.href = "sunblock.html";
+      } else if (query.includes("serum")) {
+        window.location.href = "serum.html";
+      } else if (query.includes("toner")) {
+        window.location.href = "toner.html";
+      } else if (query.includes("facewash")) {
+        window.location.href = "facewash.html";
+      }
+      else if (query.includes("deal")) {
+        window.location.href = "deal.html";
+      }
+      else if (query.includes("bundles")) {
+        window.location.href = "bundles.html";
+      }
+      else if (query.includes("home")) {
+        window.location.href = "home.html";
+      }
+      else if (query.includes("about")) {
+        window.location.href = "about.html";
+      }
+      else {
+        alert("Product not found! 🙁");
+      }
+    }
+  });
+</script>
+    
+</body>
+</html>
