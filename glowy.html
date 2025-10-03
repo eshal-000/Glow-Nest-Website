@@ -440,7 +440,6 @@ nav {
       box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
     }
 
-    /* ---------- Skincare / Products / Reviews Styling ---------- */
     h1.app-title {
       color: #e91e63;
       margin-bottom: 30px;
@@ -509,7 +508,7 @@ nav {
   justify-content: center; /* Center the grid items horizontally */
   padding-bottom: 20px;
   margin-top: 40px;
-  max-width: 1200px; /* Fits four cards (4 * 280px + 3 * 20px = 1180px) */
+  max-width: 1200px; 
   margin-left: auto;
   margin-right: auto;
 }
@@ -523,7 +522,7 @@ nav {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   transition: all 0.4s ease;
   position: relative;
-  width: 280px; /* Fixed width */
+  width: 280px; 
   overflow: hidden;
 }
 
@@ -682,7 +681,6 @@ nav {
       transform: scale(1.05);
     }
 
-    /* Section dividers */
     .section-divider {
       height: 4px;
       background: linear-gradient(to right, transparent, #e91e63, #ff8a80, transparent);
@@ -692,7 +690,6 @@ nav {
       border-radius: 4px;
     }
 
-    /* About Modal */
     .about-modal .modal-content {
       border-radius: 20px;
       background: #fffaf7;
@@ -713,7 +710,6 @@ nav {
       line-height: 1.6;
     }
 
-    /* Enhanced About Modal */
     .about-modal .modal-body h5 {
       color: #e91e63;
       margin-top: 20px;
@@ -729,7 +725,6 @@ nav {
       margin-bottom: 10px;
     }
 
-    /* Responsive tweaks */
     @media (max-width: 600px) {
       .main-header h1 { font-size: 2.8rem; }
       .doc-header { font-size: 2.2rem; }
@@ -1127,9 +1122,7 @@ nav {
             background: #f5f5f5;
         }
 
-        /* ==========================
-   PATIENT SUCCESS STORIES
-   ========================== */
+     
 .patient-card {
   border: none;
   border-radius: 20px;
@@ -1436,7 +1429,6 @@ nav {
 </div>
   </nav></header>
 <body>
-  <!-- About Section -->
    <section class="hero-section">
     <h1>Our Doctors & Medicated Skin Care Products</h1>
     <p>At Glownest, our expert dermatologists craft premium medicated skin care products tailored to your unique needs. Discover solutions that blend science and care for radiant, healthy skin.</p>
@@ -1445,13 +1437,11 @@ nav {
       Our board-certified doctors use cutting-edge research to develop products that address acne, aging, and sensitive skin. Each formula is designed to deliver visible results while prioritizing skin health.
     </div>
   </section>
-  <!-- ==========================
-       1) DOCTORS / DERMATOLOGISTS
-       ========================== -->
+
   <div class="container">
     <h1 class="doc-header">👩‍⚕️ Our Dermatologists</h1>
     <div class="row g-4 justify-content-center">
-      <!-- Dr. Ayesha Card -->
+      <!-- Dr. Eshal Card -->
       <div class="col-md-4">
         <div class="card vet-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
           <img src="skin imgs/esh.jpg" class="vet-img" alt="Dr. Ayesha">
@@ -1462,7 +1452,7 @@ nav {
           </div>
         </div>
       </div>
-      <!-- Dr. Sara Card -->
+      <!-- Dr. Maria Card -->
       <div class="col-md-4">
         <div class="card vet-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
           <img src="skin imgs//mar.jpg" class="vet-img" alt="Dr. Sara">
@@ -1473,7 +1463,7 @@ nav {
           </div>
         </div>
       </div>
-      <!-- Dr. Hira Card -->
+      <!-- Dr. Wirsha Card -->
       <div class="col-md-4">
         <div class="card vet-card" data-tilt data-tilt-max="10" data-tilt-speed="400">
           <img src="skin imgs//wir.jpg" class="vet-img" alt="Dr. Hira">
@@ -1487,7 +1477,6 @@ nav {
     </div>
   </div>
 
-  <!-- Modals (Dr. Ayesha) -->
   <div class="modal fade" id="dermModal1" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content p-4">
@@ -1529,7 +1518,6 @@ nav {
     </div>
   </div>
 
-  <!-- Modal - Dr. Sara -->
   <div class="modal fade" id="dermModal2" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content p-4">
@@ -1571,7 +1559,6 @@ nav {
     </div>
   </div>
 
-  <!-- Modal - Dr. Hira -->
   <div class="modal fade" id="dermModal3" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content p-4">
@@ -1613,16 +1600,14 @@ nav {
     </div>
   </div>
 
-  <!-- Section Divider -->
+
   <div class="section-divider"></div>
 
-  <!-- ==========================
-       2) SKINCARE SELECTOR + PRODUCTS
-       ========================== -->
+ 
   <div class="container">
     <h1 class="app-title">GlowNest Skincare</h1>
 
-    <!-- Skin Tone Selector -->
+    
     <label for="skinTone">Select Your Skin Tone:</label>
     <select id="skinTone">
       <option value="">--Choose--</option>
@@ -1631,7 +1616,7 @@ nav {
       <option value="dark">Dark</option>
     </select>
 
-    <!-- Skin Type Selector -->
+   
     <div id="skinTypeSection" style="display:none;">
       <label for="skinType">Select Your Skin Type:</label>
       <select id="skinType">
@@ -1643,7 +1628,6 @@ nav {
       </select>
     </div>
 
-    <!-- Problem Selector -->
     <div id="problemSection" style="display:none;">
       <label for="problem">Solutions For:</label>
       <select id="problem">
@@ -1662,51 +1646,42 @@ nav {
       </select>
     </div>
 
-    <!-- Products -->
     <div class="products-container">
       <div id="products" class="products"></div>
     </div>
   </div>
 
- <!-- Section Divider -->
   <div class="section-divider"></div>
   
-<!-- Tips Section to be placed after GlowNest Skincare section -->
   <section class="tips-section">
     <div class="container">
       <h2 class="section-title">Essential Skincare Secrets</h2>
       <div class="tips-grid">
-        <!-- Tip Card 1 -->
         <div class="tip-card">
           <i class="fas fa-tint"></i>
           <h3>Hydrate Inside Out</h3>
           <p>Drink 8 glasses of water daily to maintain skin elasticity and a radiant glow.</p>
         </div>
-        <!-- Tip Card 2 -->
         <div class="tip-card">
           <i class="fas fa-sun"></i>
           <h3>Sun Protection</h3>
           <p>Wear SPF 50 daily to shield your skin from UV damage and premature aging.</p>
         </div>
-        <!-- Tip Card 3 -->
         <div class="tip-card">
           <i class="fas fa-leaf"></i>
           <h3>Natural Ingredients</h3>
           <p>Use products with aloe vera or green tea to soothe and nourish your skin.</p>
         </div>
-        <!-- Tip Card 4 -->
         <div class="tip-card">
           <i class="fas fa-heart"></i>
           <h3>Self-Care Rituals</h3>
           <p>Incorporate weekly face masks to pamper and rejuvenate your complexion.</p>
         </div>
-        <!-- Tip Card 5 -->
         <div class="tip-card">
           <i class="fas fa-bath"></i>
           <h3>Gentle Exfoliation</h3>
           <p>Exfoliate 2-3 times a week to remove dead skin and reveal a fresh glow.</p>
         </div>
-        <!-- Tip Card 6 -->
         <div class="tip-card">
           <i class="fas fa-moon"></i>
           <h3>Night Routine</h3>
@@ -1717,7 +1692,6 @@ nav {
   </section>
 
   
-  <!-- Section Divider -->
   <div class="section-divider"></div>
  
  <div class="container">
@@ -1800,7 +1774,7 @@ nav {
         </section>
         
         <div class="pagination" id="pagination">
-            <!-- Pagination buttons will be inserted here -->
+          
         </div>
     </div>
 
@@ -1811,124 +1785,103 @@ nav {
   <!-- JavaScript -->
   <script>
 
- // Add click event to trigger bounce animation on card click
     document.querySelectorAll('.tip-card').forEach(card => {
       card.addEventListener('click', () => {
-        // Remove any existing 'clicked' class to reset animation
         card.classList.remove('clicked');
-        // Trigger reflow to restart animation
         void card.offsetWidth;
-        // Add 'clicked' class to trigger bounce animation
         card.classList.add('clicked');
-        // Remove 'clicked' class after animation completes
         setTimeout(() => {
           card.classList.remove('clicked');
-        }, 400); // Match animation duration
+        }, 400);
       });
     });
 
- // Skincare product reviews data with Pakistani names and 5 reviews per product
         const reviews = [
-            // Brightening Cream - 5 reviews
             { id: 1, product: "Brightening Cream", category: "Brightening", reviewer: "Ayesha Khan", age: "25", gender: "female", rating: 5, text: "This cream has transformed my skin! My complexion is so much brighter and even-toned now.", date: "2024-10-15" },
             { id: 2, product: "Brightening Cream", category: "Brightening", reviewer: "Bilal Ahmed", age: "32", gender: "male", rating: 4, text: "Good product. I've noticed a slight improvement in my skin tone after 3 weeks of use.", date: "2025-09-28" },
             { id: 3, product: "Brightening Cream", category: "Brightening", reviewer: "Fatima Raza", age: "29", gender: "female", rating: 5, text: "Absolutely love this cream! It has reduced my dark spots significantly. Highly recommend!", date: "2024-11-02" },
             { id: 4, product: "Brightening Cream", category: "Brightening", reviewer: "Hina Malik", age: "35", gender: "female", rating: 4, text: "Nice cream that gives a subtle glow. Works well under makeup too.", date: "2023-10-22" },
             { id: 5, product: "Brightening Cream", category: "Brightening", reviewer: "Omar Sheikh", age: "41", gender: "male", rating: 3, text: "It's an okay product but takes time to show results. Patience is key.", date: "2023-11-18" },
             
-            // Vitamin C Serum - 5 reviews
             { id: 6, product: "Vitamin C Serum", category: "Serum", reviewer: "Hassan Malik", age: "35", gender: "male", rating: 4, text: "This serum gives my skin a nice glow. I use it every morning before moisturizer.", date: "2024-10-20" },
             { id: 7, product: "Vitamin C Serum", category: "Serum", reviewer: "Sana Ali", age: "27", gender: "female", rating: 5, text: "My holy grail serum! It has brightened my complexion and made my skin look healthier.", date: "2025-09-15" },
             { id: 8, product: "Vitamin C Serum", category: "Serum", reviewer: "Omar Farooq", age: "41", gender: "male", rating: 3, text: "Decent serum but I expected more dramatic results. Does make skin feel soft though.", date: "2024-11-10" },
             { id: 9, product: "Vitamin C Serum", category: "Serum", reviewer: "Zara Khan", age: "24", gender: "female", rating: 5, text: "This serum has helped fade my acne scars. I can see visible improvement in just a month.", date: "2024-10-05" },
             { id: 10, product: "Vitamin C Serum", category: "Serum", reviewer: "Imran Siddiqui", age: "38", gender: "male", rating: 4, text: "Good quality serum that absorbs quickly. My skin looks more radiant with regular use.", date: "2025-09-25" },
             
-            // Exfoliating Serum - 5 reviews
             { id: 11, product: "Exfoliating Serum", category: "Exfoliator", reviewer: "Zainab Shah", age: "22", gender: "female", rating: 4, text: "Gentle yet effective exfoliation. My skin feels smoother after each use.", date: "2025-10-05" },
             { id: 12, product: "Exfoliating Serum", category: "Exfoliator", reviewer: "Imran Khan", age: "38", gender: "male", rating: 5, text: "This serum has helped clear up my congested skin. Really impressed with the results.", date: "2025-09-22" },
             { id: 13, product: "Exfoliating Serum", category: "Exfoliator", reviewer: "Nadia Hussain", age: "31", gender: "female", rating: 4, text: "Great for weekly exfoliation. Doesn't irritate my sensitive skin which is a plus.", date: "2025-11-05" },
             { id: 14, product: "Exfoliating Serum", category: "Exfoliator", reviewer: "Ahmed Raza", age: "29", gender: "male", rating: 4, text: "Helps with texture issues. My skin feels much smoother after consistent use.", date: "2025-10-18" },
             { id: 15, product: "Exfoliating Serum", category: "Exfoliator", reviewer: "Sadia Noor", age: "26", gender: "female", rating: 5, text: "This serum has minimized my pores and made my skin glow. Love it!", date: "2025-09-30" },
             
-            // Pore Minimizer Serum - 5 reviews
             { id: 16, product: "Pore Minimizer Serum", category: "Serum", reviewer: "Rashid Mahmood", age: "29", gender: "male", rating: 5, text: "Works wonders on my large pores! My skin looks much smoother now.", date: "2025-10-18" },
             { id: 17, product: "Pore Minimizer Serum", category: "Serum", reviewer: "Sadia Akhtar", age: "26", gender: "female", rating: 4, text: "Noticeable difference in pore appearance after 4 weeks of consistent use.", date: "2025-09-30" },
             { id: 18, product: "Pore Minimizer Serum", category: "Serum", reviewer: "Tariq Javed", age: "45", gender: "male", rating: 3, text: "Okay product. Pores appear slightly smaller but not as dramatic as I hoped.", date: "2025-11-12" },
             { id: 19, product: "Pore Minimizer Serum", category: "Serum", reviewer: "Amina Sheikh", age: "33", gender: "female", rating: 4, text: "Good serum that makes pores less visible. Works best when used consistently.", date: "2025-10-08" },
             { id: 20, product: "Pore Minimizer Serum", category: "Serum", reviewer: "Kamran Ali", age: "40", gender: "male", rating: 5, text: "Excellent product! My pores have never looked better. Worth every penny.", date: "2025-09-25" },
             
-            // Glow Mask - 5 reviews
             { id: 21, product: "Glow Mask", category: "Mask", reviewer: "Amina Sheikh", age: "33", gender: "female", rating: 5, text: "Instant glow! I use this before special events and my skin always looks radiant.", date: "2025-10-08" },
             { id: 22, product: "Glow Mask", category: "Mask", reviewer: "Kamran Ali", age: "40", gender: "male", rating: 4, text: "Nice mask. Leaves skin feeling refreshed and looking brighter.", date: "2023-09-25" },
             { id: 23, product: "Glow Mask", category: "Mask", reviewer: "Hina Mansoor", age: "28", gender: "female", rating: 5, text: "My favorite pick-me-up skincare product! Always makes my skin look alive and glowing.", date: "2025-11-08" },
             { id: 24, product: "Glow Mask", category: "Mask", reviewer: "Faisal Iqbal", age: "36", gender: "male", rating: 4, text: "Good mask for occasional use. Gives a nice temporary glow to the skin.", date: "2023-10-22" },
             { id: 25, product: "Glow Mask", category: "Mask", reviewer: "Mehak Ahmed", age: "24", gender: "female", rating: 5, text: "This mask is magical! My skin looks so refreshed and glowing after each use.", date: "2025-09-18" },
             
-            // Balancing Toner - 5 reviews
             { id: 26, product: "Balancing Toner", category: "Toner", reviewer: "Faisal Iqbal", age: "36", gender: "male", rating: 4, text: "Perfect for my combination skin. Controls oil without drying out my cheeks.", date: "2025-10-22" },
             { id: 27, product: "Balancing Toner", category: "Toner", reviewer: "Mehak Ahmed", age: "24", gender: "female", rating: 5, text: "This toner has balanced my oily T-zone beautifully. My makeup applies smoother now.", date: "2025-09-18" },
             { id: 28, product: "Balancing Toner", category: "Toner", reviewer: "Yasir Raza", age: "31", gender: "male", rating: 4, text: "Good toner. Skin feels clean and balanced after use.", date: "2025-11-15" },
             { id: 29, product: "Balancing Toner", category: "Toner", reviewer: "Saba Tanveer", age: "29", gender: "female", rating: 5, text: "This toner has transformed my skincare routine. My skin has never been more balanced.", date: "2025-10-12" },
             { id: 30, product: "Balancing Toner", category: "Toner", reviewer: "Asif Khan", age: "42", gender: "male", rating: 4, text: "Effective toner that helps control shine throughout the day.", date: "2025-09-20" },
             
-            // Hydra Moist Cream - 5 reviews
             { id: 31, product: "Hydra Moist Cream", category: "Moisturizer", reviewer: "Saba Tanveer", age: "29", gender: "female", rating: 5, text: "Extremely hydrating without feeling heavy. Perfect for my dry skin, especially in winter.", date: "2025-10-12" },
             { id: 32, product: "Hydra Moist Cream", category: "Moisturizer", reviewer: "Asif Khan", age: "42", gender: "male", rating: 4, text: "Rich moisturizer that keeps my skin hydrated all day. Doesn't feel greasy.", date: "2025-09-20" },
             { id: 33, product: "Hydra Moist Cream", category: "Moisturizer", reviewer: "Rabia Tariq", age: "35", gender: "female", rating: 5, text: "This cream has saved my dehydrated skin! It's now plump and glowing.", date: "2025-11-03" },
             { id: 34, product: "Hydra Moist Cream", category: "Moisturizer", reviewer: "Nasir Ahmed", age: "27", gender: "male", rating: 4, text: "Good moisturizer for dry climates. Keeps my skin hydrated throughout the day.", date: "2025-10-25" },
             { id: 35, product: "Hydra Moist Cream", category: "Moisturizer", reviewer: "Zara Malik", age: "23", gender: "female", rating: 5, text: "This is my go-to moisturizer. It's perfect for my sensitive, dry skin.", date: "2025-09-12" },
             
-            // Clarifying Mist - 5 reviews
             { id: 36, product: "Clarifying Mist", category: "Toner", reviewer: "Nasir Ahmed", age: "27", gender: "male", rating: 4, text: "Refreshing mist that I use throughout the day. Helps keep my skin hydrated.", date: "2025-10-25" },
             { id: 37, product: "Clarifying Mist", category: "Toner", reviewer: "Zara Malik", age: "23", gender: "female", rating: 5, text: "Love this mist! It sets my makeup and gives my skin a dewy finish.", date: "2025-09-12" },
             { id: 38, product: "Clarifying Mist", category: "Toner", reviewer: "Saad Abdullah", age: "38", gender: "male", rating: 3, text: "Nice refreshing spray but I'm not sure it does much beyond that.", date: "2025-11-18" },
             { id: 39, product: "Clarifying Mist", category: "Toner", reviewer: "Anum Bashir", age: "34", gender: "female", rating: 4, text: "Great for refreshing my skin during the day. Also works well as a makeup setting spray.", date: "2025-10-07" },
             { id: 40, product: "Clarifying Mist", category: "Toner", reviewer: "Javed Iqbal", age: "47", gender: "male", rating: 3, text: "It's an okay product. Does what it says but nothing extraordinary.", date: "2025-09-28" },
             
-            // Pigment Corrector Serum - 5 reviews
             { id: 41, product: "Pigment Corrector Serum", category: "Serum", reviewer: "Anum Bashir", age: "34", gender: "female", rating: 5, text: "Slowly but surely fading my sun spots. Gentle yet effective formula.", date: "2025-10-07" },
             { id: 42, product: "Pigment Corrector Serum", category: "Serum", reviewer: "Javed Iqbal", age: "47", gender: "male", rating: 4, text: "Seeing improvement in my age spots after 6 weeks of use. Promising results.", date: "2025-09-28" },
             { id: 43, product: "Pigment Corrector Serum", category: "Serum", reviewer: "Saima Hassan", age: "30", gender: "female", rating: 5, text: "This serum is magic! My hyperpigmentation has significantly lightened.", date: "2025-11-09" },
             { id: 44, product: "Pigment Corrector Serum", category: "Serum", reviewer: "Farhan Akhtar", age: "39", gender: "male", rating: 4, text: "Good serum for spot correction. Takes time but shows results.", date: "2025-10-14" },
             { id: 45, product: "Pigment Corrector Serum", category: "Serum", reviewer: "Nida Rahman", age: "26", gender: "female", rating: 5, text: "This has helped fade my acne marks significantly. Highly recommend for pigmentation issues.", date: "2025-09-23" },
             
-            // Under Eye Cream - 5 reviews
             { id: 46, product: "Under Eye Cream", category: "Eye Care", reviewer: "Farhan Akhtar", age: "39", gender: "male", rating: 4, text: "Helps reduce the appearance of my dark circles. Light texture absorbs quickly.", date: "2025-10-14" },
             { id: 47, product: "Under Eye Cream", category: "Eye Care", reviewer: "Nida Rahman", age: "26", gender: "female", rating: 5, text: "This cream has made my under eyes look so much brighter. Love it!", date: "2025-09-23" },
             { id: 48, product: "Under Eye Cream", category: "Eye Care", reviewer: "Ali Rizvi", age: "44", gender: "male", rating: 3, text: "Okay cream but I haven't noticed dramatic results for my puffiness.", date: "2025-11-11" },
             { id: 49, product: "Under Eye Cream", category: "Eye Care", reviewer: "Ayesha Siddiqui", age: "31", gender: "female", rating: 5, text: "This eye cream is a game-changer! My dark circles have visibly reduced in just 2 weeks.", date: "2025-10-19" },
             { id: 50, product: "Under Eye Cream", category: "Eye Care", reviewer: "Bilal Hassan", age: "36", gender: "male", rating: 4, text: "Good eye cream that moisturizes well without causing milia.", date: "2025-09-27" },
             
-            // Additional products with 5 reviews each
-            // Acne Face Mask - 5 reviews
+            
             { id: 51, product: "Acne Face Mask", category: "Mask", reviewer: "Sara Jamil", age: "22", gender: "female", rating: 5, text: "This mask has cleared my breakouts significantly. I use it twice a week.", date: "2025-10-03" },
             { id: 52, product: "Acne Face Mask", category: "Mask", reviewer: "Haris Mahmood", age: "19", gender: "male", rating: 4, text: "Good for controlling acne. My skin feels cleaner after each use.", date: "2025-11-07" },
             { id: 53, product: "Acne Face Mask", category: "Mask", reviewer: "Amina Khan", age: "25", gender: "female", rating: 5, text: "This mask has been a lifesaver for my hormonal acne. Reduces inflammation quickly.", date: "2025-09-14" },
             { id: 54, product: "Acne Face Mask", category: "Mask", reviewer: "Omer Farooq", age: "28", gender: "male", rating: 4, text: "Effective mask for occasional breakouts. Dries out pimples without overdrying skin.", date: "2025-10-29" },
             { id: 55, product: "Acne Face Mask", category: "Mask", reviewer: "Fatima Ali", age: "23", gender: "female", rating: 5, text: "Best acne treatment I've tried. My skin is finally clear after years of struggling.", date: "2025-11-13" },
             
-            // Night Repair Cream - 5 reviews
             { id: 56, product: "Night Repair Cream", category: "Moisturizer", reviewer: "Ahmed Hassan", age: "45", gender: "male", rating: 4, text: "Rich cream that works overnight. My skin feels nourished in the morning.", date: "2025-10-11" },
             { id: 57, product: "Night Repair Cream", category: "Moisturizer", reviewer: "Sana Khan", age: "38", gender: "female", rating: 5, text: "This cream has improved my skin texture dramatically. Waking up to softer skin every day.", date: "2025-09-16" },
             { id: 58, product: "Night Repair Cream", category: "Moisturizer", reviewer: "Bilal Akhtar", age: "42", gender: "male", rating: 4, text: "Good overnight treatment. Doesn't feel heavy on the skin.", date: "2025-11-04" },
             { id: 59, product: "Night Repair Cream", category: "Moisturizer", reviewer: "Hina Sheikh", age: "35", gender: "female", rating: 5, text: "My skin has never looked better since I started using this night cream.", date: "2025-10-17" },
             { id: 60, product: "Night Repair Cream", category: "Moisturizer", reviewer: "Tariq Malik", age: "50", gender: "male", rating: 4, text: "Effective anti-aging cream that moisturizes well overnight.", date: "2025-09-21" },
             
-            // Sunscreen Gel - 5 reviews
             { id: 61, product: "Sunscreen Gel", category: "Sun Protection", reviewer: "Zara Ahmed", age: "26", gender: "female", rating: 5, text: "Lightweight sunscreen that doesn't leave a white cast. Perfect under makeup.", date: "2025-10-24" },
             { id: 62, product: "Sunscreen Gel", category: "Sun Protection", reviewer: "Omar Khan", age: "33", gender: "male", rating: 4, text: "Good daily sunscreen that absorbs quickly without feeling greasy.", date: "2025-09-09" },
             { id: 63, product: "Sunscreen Gel", category: "Sun Protection", reviewer: "Ayesha Raza", age: "29", gender: "female", rating: 5, text: "Finally found a sunscreen that doesn't break me out! This is perfect for acne-prone skin.", date: "2025-11-16" },
             { id: 64, product: "Sunscreen Gel", category: "Sun Protection", reviewer: "Haroon Siddiqui", age: "41", gender: "male", rating: 4, text: "Effective sun protection that doesn't feel heavy on the skin.", date: "2025-10-06" },
             { id: 65, product: "Sunscreen Gel", category: "Sun Protection", reviewer: "Sadia Malik", age: "27", gender: "female", rating: 5, text: "This sunscreen has become a staple in my daily routine. No more tanning!", date: "2025-09-26" },
             
-            // Facial Oil - 5 reviews
             { id: 66, product: "Nourishing Facial Oil", category: "Oil", reviewer: "Imran Sheikh", age: "39", gender: "male", rating: 4, text: "Good facial oil that moisturizes without clogging pores.", date: "2025-10-13" },
             { id: 67, product: "Nourishing Facial Oil", category: "Oil", reviewer: "Amina Hassan", age: "32", gender: "female", rating: 5, text: "This oil has transformed my dry skin. It's now supple and glowing.", date: "2025-09-19" },
             { id: 68, product: "Nourishing Facial Oil", category: "Oil", reviewer: "Bilal Raza", age: "44", gender: "male", rating: 3, text: "Okay oil but a bit heavy for my skin type. Might work better for very dry skin.", date: "2025-11-06" },
             { id: 69, product: "Nourishing Facial Oil", category: "Oil", reviewer: "Sana Ahmed", age: "28", gender: "female", rating: 5, text: "Love this facial oil! It locks in moisture and gives my skin a beautiful glow.", date: "2025-10-30" },
             { id: 70, product: "Nourishing Facial Oil", category: "Oil", reviewer: "Omer Malik", age: "35", gender: "male", rating: 4, text: "Good quality facial oil that absorbs well. Doesn't feel greasy.", date: "2025-09-11" },
             
-            // Face Wash - 5 reviews
             { id: 71, product: "Gentle Face Wash", category: "Cleanser", reviewer: "Hina Khan", age: "24", gender: "female", rating: 5, text: "Gentle yet effective cleanser that doesn't strip my skin. Perfect for daily use.", date: "2025-10-31" },
             { id: 72, product: "Gentle Face Wash", category: "Cleanser", reviewer: "Ahmed Ali", age: "30", gender: "male", rating: 4, text: "Good daily cleanser that removes dirt without overdrying.", date: "2025-09-24" },
             { id: 73, product: "Gentle Face Wash", category: "Cleanser", reviewer: "Zara Sheikh", age: "26", gender: "female", rating: 5, text: "This face wash has calmed my sensitive skin. No more redness after cleansing.", date: "2025-11-14" },
@@ -1936,7 +1889,6 @@ nav {
             { id: 75, product: "Gentle Face Wash", category: "Cleanser", reviewer: "Ayesha Malik", age: "29", gender: "female", rating: 5, text: "My holy grail cleanser! It's perfect for my combination skin.", date: "2025-09-29" }
         ];
 
-        // DOM elements
         const searchInput = document.getElementById('searchInput');
         const ageFilter = document.getElementById('ageFilter');
         const genderFilter = document.getElementById('genderFilter');
@@ -1945,18 +1897,15 @@ nav {
         const resetFiltersBtn = document.getElementById('resetFilters');
         const pagination = document.getElementById('pagination');
 
-        // Current filter states
         let currentFilters = {
             search: '',
             age: 'all',
             gender: 'all'
         };
 
-        // Pagination
         let currentPage = 1;
         const reviewsPerPage = 12;
 
-        // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
             displayReviews(getPaginatedReviews(reviews));
             setupEventListeners();
@@ -1977,13 +1926,10 @@ nav {
                 if (e.target.classList.contains('filter-btn')) {
                     const clickedFilter = e.target.dataset.filter;
                     
-                    // If clicking the same filter that's already active, toggle it off
                     if (clickedFilter === currentFilters.age) {
-                        // Activate "All" filter instead
                         currentFilters.age = 'all';
                         updateActiveButton(ageFilter, 'all');
                     } else {
-                        // Activate the clicked filter
                         currentFilters.age = clickedFilter;
                         updateActiveButton(ageFilter, clickedFilter);
                     }
@@ -1993,14 +1939,11 @@ nav {
                 }
             });
 
-            // Gender filter buttons with toggle functionality
             genderFilter.addEventListener('click', function(e) {
                 if (e.target.classList.contains('filter-btn')) {
                     const clickedFilter = e.target.dataset.filter;
                     
-                    // If clicking the same filter that's already active, toggle it off
                     if (clickedFilter === currentFilters.gender) {
-                        // Activate "All" filter instead
                         currentFilters.gender = 'all';
                         updateActiveButton(genderFilter, 'all');
                     } else {
@@ -2014,32 +1957,24 @@ nav {
                 }
             });
 
-            // Reset filters button
             resetFiltersBtn.addEventListener('click', function() {
-                // Reset search input
                 searchInput.value = '';
                 currentFilters.search = '';
                 
-                // Reset age filter
                 currentFilters.age = 'all';
                 updateActiveButton(ageFilter, 'all');
                 
-                // Reset gender filter
                 currentFilters.gender = 'all';
                 updateActiveButton(genderFilter, 'all');
                 
                 currentPage = 1;
-                // Reset reviews display
                 filterReviews();
             });
         }
 
-        // Update active button state
         function updateActiveButton(filterContainer, activeFilter) {
-            // Remove active class from all buttons in this group
             Array.from(filterContainer.children).forEach(btn => {
                 btn.classList.remove('active');
-                // Update icons
                 const icon = btn.querySelector('i');
                 if (icon) {
                     if (btn.dataset.filter === activeFilter) {
@@ -2050,7 +1985,6 @@ nav {
                 }
             });
             
-            // Add active class to the appropriate button
             const activeButton = filterContainer.querySelector(`[data-filter="${activeFilter}"]`);
             if (activeButton) {
                 activeButton.classList.add('active');
@@ -2061,10 +1995,8 @@ nav {
             }
         }
 
-        // Filter reviews based on current filters
         function filterReviews() {
             const filteredReviews = reviews.filter(review => {
-                // Search filter
                 if (currentFilters.search) {
                     const searchText = currentFilters.search;
                     const matchesSearch = 
@@ -2075,7 +2007,6 @@ nav {
                     if (!matchesSearch) return false;
                 }
                 
-                // Age filter
                 if (currentFilters.age !== 'all') {
                     let ageMatch = false;
                     
@@ -2112,21 +2043,17 @@ nav {
             const count = filteredReviews.length;
             resultsCount.textContent = `${count} review${count !== 1 ? 's' : ''} found`;
             
-            // Update pagination
             setupPagination(count);
             
-            // Display filtered reviews
             displayReviews(getPaginatedReviews(filteredReviews));
         }
 
-        // Get paginated reviews
         function getPaginatedReviews(reviewsList) {
             const startIndex = (currentPage - 1) * reviewsPerPage;
             const endIndex = startIndex + reviewsPerPage;
             return reviewsList.slice(startIndex, endIndex);
         }
 
-        // Setup pagination
         function setupPagination(totalReviews) {
             const pageCount = Math.ceil(totalReviews / reviewsPerPage);
             pagination.innerHTML = '';
@@ -2145,12 +2072,9 @@ nav {
             }
         }
 
-        // Display reviews in the container
         function displayReviews(reviewsToShow) {
-            // Clear container
             reviewsContainer.innerHTML = '';
             
-            // Show message if no results
             if (reviewsToShow.length === 0) {
                 reviewsContainer.innerHTML = `
                     <div class="no-results">
@@ -2162,19 +2086,16 @@ nav {
                 return;
             }
             
-            // Add reviews to container
             reviewsToShow.forEach((review, index) => {
                 const reviewCard = document.createElement('div');
                 reviewCard.className = 'review-card';
                 reviewCard.style.animationDelay = `${index * 0.05}s`;
                 
-                // Generate star rating
                 let stars = '';
                 for (let i = 1; i <= 5; i++) {
                     stars += i <= review.rating ? '★' : '☆';
                 }
                 
-                // Format date
                 const reviewDate = new Date(review.date).toLocaleDateString('en-US', {
                     year: 'numeric',
                     month: 'long',
@@ -2231,16 +2152,13 @@ nav {
       animation.onfinish = () => particle.remove();
     }
 
-    // Create particles at intervals
     setInterval(createParticle, 300);
 
-    // Initial burst of particles
     for (let i = 0; i < 20; i++) {
       setTimeout(createParticle, i * 100);
     }
 
 
-    // ScrollTrigger for Sections
     gsap.utils.toArray('.container').forEach(section => {
       gsap.from(section, {
         opacity: 0,
@@ -2255,7 +2173,6 @@ nav {
       });
     });
 
-    // Vanilla Tilt for Dermatologist Cards
     VanillaTilt.init(document.querySelectorAll('.vet-card'), {
       max: 10,
       speed: 400,
@@ -2263,7 +2180,6 @@ nav {
       'max-glare': 0.3
     });
 
-    // Animated Counters for Rating Counts
     function animateCounters() {
       document.querySelectorAll('.bar-count').forEach(counter => {
         const target = parseInt(counter.getAttribute('data-count'));
@@ -2279,7 +2195,6 @@ nav {
       });
     }
 
-    // Product Data
     const problemProducts = {
       acne: [
         {name: "GlowNest Acne Cream", desc: "Targets pimples & reduces redness.", price: 1200, img: "/skin imgs/pro1.jfif"},
@@ -2354,7 +2269,6 @@ nav {
     const problem = document.getElementById('problem');
     const productsDiv = document.getElementById('products');
 
-    // Show skin type after skin tone chosen
     skinTone.addEventListener('change', () => {
       if (skinTone.value) {
         skinTypeSection.style.display = 'block';
@@ -2366,7 +2280,6 @@ nav {
       }
     });
 
-    // Show problem selector after skin type chosen
     skinType.addEventListener('change', () => {
       if (skinType.value) {
         problemSection.style.display = 'block';
@@ -2377,7 +2290,6 @@ nav {
       }
     });
 
-    // Populate products when problem selected
     problem.addEventListener('change', () => {
       productsDiv.innerHTML = '';
       if (problem.value) {
@@ -2423,7 +2335,6 @@ nav {
       alert(`Product: ${name}\nDescription: ${desc}\nPrice: Rs. ${price}`);
     }
 
-    // Enhanced About Modal Animation
     document.getElementById('aboutModal').addEventListener('show.bs.modal', function () {
       gsap.fromTo('.about-modal .modal-content', 
         { scale: 0.8, opacity: 0 }, 
